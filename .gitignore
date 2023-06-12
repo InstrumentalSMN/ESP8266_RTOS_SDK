@@ -13,6 +13,9 @@
 examples/**/sdkconfig
 examples/**/sdkconfig.old
 examples/**/build
+workspace/**/sdkconfig
+workspace/**/sdkconfig.old
+workspace/**/build
 
 # Unit test app files
 tools/unit-test-app/sdkconfig
