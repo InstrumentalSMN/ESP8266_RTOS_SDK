@@ -1,7 +1,8 @@
 #include "transmission.h"
 #include "i2cSensors.h"
 
-static const char *TAG = "example";
+
+//char *TAG = "example";
 //static const char *payload = "Message from ESP32 ";
 
 

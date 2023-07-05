@@ -20,6 +20,7 @@
 #include "lwip/sockets.h"
 #include "lwip/sys.h"
 #include <lwip/netdb.h>
+#include "common.h"
 
 
 #ifdef CONFIG_EXAMPLE_IPV4
