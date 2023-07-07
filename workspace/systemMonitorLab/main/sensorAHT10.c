@@ -1,4 +1,4 @@
-#include "i2cSensors.h"
+#include "sensorAHT10.h"
 
 
 char payload2[300];
@@ -92,6 +92,9 @@ char payload2[300];
 #define NACK_VAL                            0x1              /*!< I2C nack value */
 #define LAST_NACK_VAL                       0x2              /*!< I2C last_nack value */
 
+char temp_string_aht10[10];
+char rh_string_aht10[10];
+
 static esp_err_t i2c_example_master_init()
 {
     int i2c_master_port = I2C_EXAMPLE_MASTER_NUM;
@@ -143,7 +146,7 @@ esp_err_t readTemperature(i2c_port_t i2c_num, float *temperature){
 		return ret;
 	}
 	uint32_t temp = ((uint32_t)(sensor_data[3] & 0x0F) << 16) | ((uint16_t)sensor_data[4] << 8) | sensor_data[5]; //20-bit raw temperature data
-	ESP_LOGI(TAG, "CrudoTemp: %d\n",temp);
+//	ESP_LOGI(TAG, "CrudoTemp: %d\n",temp);
 	*temperature = (float)temp * 0.000191 - 50;
 //	ESP_LOGI(TAG, "Temp: %.2f\n",*temperature);
 	return ret;
@@ -159,7 +162,7 @@ esp_err_t readHumidity(i2c_port_t i2c_num, float *rh){
 		return ret;
 	}
 	uint32_t rawData = (((uint32_t)sensor_data[1] << 16) | ((uint16_t)sensor_data[2] << 8) | (sensor_data[3])) >> 4; //20-bit raw humidity data
-	ESP_LOGI(TAG, "CrudoRH: %d\n",rawData);
+//	ESP_LOGI(TAG, "CrudoRH: %d\n",rawData);
 
 	*rh= (float)rawData * 0.000095;
 	if (*rh < 0)   *rh = 0;
@@ -200,25 +203,23 @@ void i2c_task_example(void *arg)
     float temp;
     float rh;
     int ret1, ret2;
-    char temp_string[10];
-    char rh_string[10];
     i2c_example_master_aht10_init(I2C_EXAMPLE_MASTER_NUM);
 
     while(1){
 
     	ret1 = readHumidity(I2C_EXAMPLE_MASTER_NUM,&rh);
-    	floatToString(rh,rh_string,2);
+    	floatToString(rh,rh_string_aht10,2);
     	ret2 = readTemperature(I2C_EXAMPLE_MASTER_NUM,&temp);
-    	floatToString(temp,temp_string,2);
+    	floatToString(temp,temp_string_aht10,2);
     	if (ret1 == ESP_OK && ret2 == ESP_OK) {
             ESP_LOGI(TAG, "*******************\n");
-            ESP_LOGI(TAG, "Temp_ATH10: %s",temp_string);
-            ESP_LOGI(TAG, "RH_ATH10: %s",rh_string);
+            ESP_LOGI(TAG, "Temp_ATH10: %s",temp_string_aht10);
+            ESP_LOGI(TAG, "RH_ATH10: %s",rh_string_aht10);
         } else {
             ESP_LOGE(TAG, "No ack, sensor not connected...skip...\n");
         }
 
-        vTaskDelay(1000 / portTICK_RATE_MS);
+        vTaskDelay(5000 / portTICK_RATE_MS);
     }
 
     i2c_driver_delete(I2C_EXAMPLE_MASTER_NUM);
