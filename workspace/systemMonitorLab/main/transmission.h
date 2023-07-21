@@ -22,6 +22,7 @@
 #include <lwip/netdb.h>
 #include "sensorAHT10.h"
 #include "sensorDHT22.h"
+#include "sensorBMP280.h"
 #include "common.h"
 
 

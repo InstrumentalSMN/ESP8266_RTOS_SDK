@@ -27,8 +27,8 @@ extern char rh_string_aht10[10];
 /*==================[external functions declaration]=========================*/
 esp_err_t readTemperature(i2c_port_t i2c_num, float *temperature);
 esp_err_t readHumidity(i2c_port_t i2c_num, float *rh);
-void i2c_task_example(void *arg);
-char* floatToString( float value, char* result, int32_t precision );
+void aht10_task(void *arg);
+
 
 
 

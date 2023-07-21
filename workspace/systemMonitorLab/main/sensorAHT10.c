@@ -52,11 +52,11 @@ char payload2[300];
  * - read the sensor data, if connected.
  */
 
-#define I2C_EXAMPLE_MASTER_SCL_IO           2                /*!< gpio number for I2C master clock */
-#define I2C_EXAMPLE_MASTER_SDA_IO           14               /*!< gpio number for I2C master data  */
-#define I2C_EXAMPLE_MASTER_NUM              I2C_NUM_0        /*!< I2C port number for master dev */
-#define I2C_EXAMPLE_MASTER_TX_BUF_DISABLE   0                /*!< I2C master do not need buffer */
-#define I2C_EXAMPLE_MASTER_RX_BUF_DISABLE   0                /*!< I2C master do not need buffer */
+//#define I2C_EXAMPLE_MASTER_SCL_IO           2                /*!< gpio number for I2C master clock */
+//#define I2C_EXAMPLE_MASTER_SDA_IO           14               /*!< gpio number for I2C master data  */
+//#define I2C_EXAMPLE_MASTER_NUM              I2C_NUM_0        /*!< I2C port number for master dev */
+//#define I2C_EXAMPLE_MASTER_TX_BUF_DISABLE   0                /*!< I2C master do not need buffer */
+//#define I2C_EXAMPLE_MASTER_RX_BUF_DISABLE   0                /*!< I2C master do not need buffer */
 
 #define AHT10_SENSOR_ADDR                	0x38             /*!< slave address for AHT10 sensor */
 #define AHT10_INIT_CMD             			0xE1			 /*!< initialization command for AHT10/AHT15 */
@@ -95,20 +95,20 @@ char payload2[300];
 char temp_string_aht10[10];
 char rh_string_aht10[10];
 
-static esp_err_t i2c_example_master_init()
-{
-    int i2c_master_port = I2C_EXAMPLE_MASTER_NUM;
-    i2c_config_t conf;
-    conf.mode = I2C_MODE_MASTER;
-    conf.sda_io_num = I2C_EXAMPLE_MASTER_SDA_IO;
-    conf.sda_pullup_en = 1;
-    conf.scl_io_num = I2C_EXAMPLE_MASTER_SCL_IO;
-    conf.scl_pullup_en = 1;
-    conf.clk_stretch_tick = 300; // 300 ticks, Clock stretch is about 210us, you can make changes according to the actual situation.
-    ESP_ERROR_CHECK(i2c_driver_install(i2c_master_port, conf.mode));
-    ESP_ERROR_CHECK(i2c_param_config(i2c_master_port, &conf));
-    return ESP_OK;
-}
+//static esp_err_t i2c_example_master_init()
+//{
+//    int i2c_master_port = I2C_EXAMPLE_MASTER_NUM;
+//    i2c_config_t conf;
+//    conf.mode = I2C_MODE_MASTER;
+//    conf.sda_io_num = I2C_EXAMPLE_MASTER_SDA_IO;
+//    conf.sda_pullup_en = 1;
+//    conf.scl_io_num = I2C_EXAMPLE_MASTER_SCL_IO;
+//    conf.scl_pullup_en = 1;
+//    conf.clk_stretch_tick = 300; // 300 ticks, Clock stretch is about 210us, you can make changes according to the actual situation.
+//    ESP_ERROR_CHECK(i2c_driver_install(i2c_master_port, conf.mode));
+//    ESP_ERROR_CHECK(i2c_param_config(i2c_master_port, &conf));
+//    return ESP_OK;
+//}
 static esp_err_t i2c_example_master_aht10_read_raw(i2c_port_t i2c_num, uint8_t *data, size_t data_len){
 	int ret;
 	i2c_cmd_handle_t cmd = i2c_cmd_link_create();
@@ -189,8 +189,8 @@ static esp_err_t setNormalMode(i2c_port_t i2c_num){
 
 static esp_err_t i2c_example_master_aht10_init(i2c_port_t i2c_num)
 {
-    vTaskDelay(AHT10_SOFT_RESET_DELAY / portTICK_RATE_MS);
-    i2c_example_master_init();
+//    vTaskDelay(AHT10_SOFT_RESET_DELAY / portTICK_RATE_MS);
+//    i2c_example_master_init();
     setNormalMode(i2c_num);
     return ESP_OK;
 
@@ -198,28 +198,31 @@ static esp_err_t i2c_example_master_aht10_init(i2c_port_t i2c_num)
 
 
 
-void i2c_task_example(void *arg)
+void aht10_task(void *arg)
 {
     float temp;
     float rh;
     int ret1, ret2;
-    i2c_example_master_aht10_init(I2C_EXAMPLE_MASTER_NUM);
+//    i2c_example_master_aht10_init(I2C_EXAMPLE_MASTER_NUM);
 
     while(1){
+    	if (xSemaphoreTake(i2c_mutex, (TickType_t)portMAX_DELAY) == pdTRUE) {
+    		i2c_example_master_aht10_init(I2C_EXAMPLE_MASTER_NUM);
+			ret1 = readHumidity(I2C_EXAMPLE_MASTER_NUM,&rh);
+			floatToString(rh,rh_string_aht10,2);
+			ret2 = readTemperature(I2C_EXAMPLE_MASTER_NUM,&temp);
+			floatToString(temp,temp_string_aht10,2);
+			if (ret1 == ESP_OK && ret2 == ESP_OK) {
+				ESP_LOGI(TAG, "*******************\n");
+				ESP_LOGI(TAG, "Temp_ATH10: %s",temp_string_aht10);
+				ESP_LOGI(TAG, "RH_ATH10: %s",rh_string_aht10);
+			} else {
+				ESP_LOGE(TAG, "No ack, sensor not connected...skip...\n");
+			}
+			xSemaphoreGive(i2c_mutex);
+			vTaskDelay(5000 / portTICK_RATE_MS);
+    	}
 
-    	ret1 = readHumidity(I2C_EXAMPLE_MASTER_NUM,&rh);
-    	floatToString(rh,rh_string_aht10,2);
-    	ret2 = readTemperature(I2C_EXAMPLE_MASTER_NUM,&temp);
-    	floatToString(temp,temp_string_aht10,2);
-    	if (ret1 == ESP_OK && ret2 == ESP_OK) {
-            ESP_LOGI(TAG, "*******************\n");
-            ESP_LOGI(TAG, "Temp_ATH10: %s",temp_string_aht10);
-            ESP_LOGI(TAG, "RH_ATH10: %s",rh_string_aht10);
-        } else {
-            ESP_LOGE(TAG, "No ack, sensor not connected...skip...\n");
-        }
-
-        vTaskDelay(5000 / portTICK_RATE_MS);
     }
 
     i2c_driver_delete(I2C_EXAMPLE_MASTER_NUM);

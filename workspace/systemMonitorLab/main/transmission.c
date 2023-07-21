@@ -3,7 +3,7 @@
 
 void tcp_client_task(void *pvParameters)
 {
-    char rx_buffer[128];
+//    char rx_buffer[128];
     char addr_str[128];
     int addr_family;
     int ip_protocol;
@@ -55,7 +55,7 @@ void tcp_client_task(void *pvParameters)
 //        char msj[] = "Hola viejo\r\n";
 //        sprintf(payload2,"%s",msj);
 //    	char msj[100];
-    	sprintf(payload2,"%s,%s,%s,%s\r\n",temp_string_dht22,temp_string_aht10,rh_string_dht22,rh_string_aht10);
+    	sprintf(payload2,"%s,%s,%s,%s,%s,%s\r\n",temp_string_dht22,temp_string_aht10,rh_string_dht22,rh_string_aht10,temp_string_bmp280,pressure_string_bmp280);
         err = send(sock, payload2, strlen(payload2), 0);
 		if (err < 0) {
 			ESP_LOGE(TAG, "Error occured during sending: errno %d", errno);
