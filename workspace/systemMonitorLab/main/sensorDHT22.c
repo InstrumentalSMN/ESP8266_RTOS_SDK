@@ -254,6 +254,6 @@ void DHT_task(void *pvParameter)
 
 		// -- wait at least 2 sec before reading again ------------
 		// The interval of whole process must be beyond 2 seconds !!
-		vTaskDelay( 5000 / portTICK_RATE_MS );
+		vTaskDelay( 500 / portTICK_RATE_MS );
 	}
 }

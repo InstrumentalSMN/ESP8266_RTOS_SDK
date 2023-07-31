@@ -220,7 +220,7 @@ void aht10_task(void *arg)
 				ESP_LOGE(TAG, "No ack, sensor not connected...skip...\n");
 			}
 			xSemaphoreGive(i2c_mutex);
-			vTaskDelay(5000 / portTICK_RATE_MS);
+			vTaskDelay(500 / portTICK_RATE_MS);
     	}
 
     }
