@@ -159,10 +159,20 @@ esp_err_t readTemperatureBmp280(i2c_port_t i2c_num, double *temperature,bmp280_c
 	var1 = (((double) uncomp_temp) / 16384.0 - ((double) calib_param->dig_t1) / 1024.0) * ((double) calib_param->dig_t2);
 	var2 = ((((double) uncomp_temp) / 131072.0 - ((double) calib_param->dig_t1) / 8192.0) * (((double) uncomp_temp) / 131072.0 - ((double) calib_param->dig_t1) / 8192.0)) * ((double) calib_param->dig_t3);
 	calib_param->t_fine = (int32_t) (var1 + var2);
-
+//	ESP_LOGI(TAG, "t_fine que asigno a la variable temp ANTES de corregir: %d\n",calib_param->t_fine);
+	//Aplico las correcciones obtenidas a partir de la calibración del sensor
+	double m = 0.972;
+	double b = -0.531;
 	*temperature = ((var1 + var2) / 5120.0);
-
-//	ESP_LOGI(TAG, "Temp: %.2f\n",*temperature);
+	*temperature = (*temperature * m) + b;
+	calib_param->t_fine = (int32_t) (*temperature * 5120);
+	if(*temperature < -40){
+		*temperature = -40;
+	}else if(*temperature > 85){
+		*temperature = 85;
+	}
+//	ESP_LOGI(TAG, "t_fine que asigno a la variable LUEGO de corregir: %d\n",calib_param->t_fine);
+//	ESP_LOGI(TAG, "TempActualBMP: %.2f\n",*temperature);
 	return ret;
 
 }
@@ -198,7 +208,8 @@ esp_err_t readPressureBmp280(i2c_port_t i2c_num, double *pressure, bmp280_calib_
 		return ret;
 	}
 	uint32_t uncomp_pres = (int32_t) ((((uint32_t) (sensor_data[0])) << 12) | (((uint32_t) (sensor_data[1])) << 4) | ((uint32_t) sensor_data[2] >> 4));
-//	ESP_LOGI(TAG, "CrudoPresion: %d\n",uncomp_pres);
+
+//	ESP_LOGI(TAG, "t_fine que le paso a la presion: %d\n",calib_param->t_fine);
 
 //	Obtenemos la presion
 	double var1, var2;
@@ -295,7 +306,8 @@ void bmp280_task(void *arg)
 			floatToString((float)temp,temp_string_bmp280,2);
 
 			ret1 = readPressureBmp280(I2C_EXAMPLE_MASTER_NUM,&pressure,&calib_param);
-			floatToString((float)(pressure/100),pressure_string_bmp280,2);
+//			agregue un 1hpa a la presion corregida en temperatura
+			floatToString((float)((pressure/100)+1),pressure_string_bmp280,2);
 			if (ret1 == ESP_OK && ret2 == ESP_OK) {
 				ESP_LOGI(TAG, "*******************\n");
 				ESP_LOGI(TAG, "Temp_BMP280: %s",temp_string_bmp280);

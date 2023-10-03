@@ -148,6 +148,19 @@ esp_err_t readTemperature(i2c_port_t i2c_num, float *temperature){
 	uint32_t temp = ((uint32_t)(sensor_data[3] & 0x0F) << 16) | ((uint16_t)sensor_data[4] << 8) | sensor_data[5]; //20-bit raw temperature data
 //	ESP_LOGI(TAG, "CrudoTemp: %d\n",temp);
 	*temperature = (float)temp * 0.000191 - 50;
+//Aplico las correcciones obtenidas a partir de la calibración del sensor de temp
+	double m = 0.978;
+	double b = 0.405;
+	*temperature = *temperature * m + b;
+
+	if(*temperature < -40){
+		*temperature = -40;
+	}else if(*temperature > 85){
+		*temperature = 85;
+	}
+
+
+
 //	ESP_LOGI(TAG, "Temp: %.2f\n",*temperature);
 	return ret;
 
@@ -165,6 +178,12 @@ esp_err_t readHumidity(i2c_port_t i2c_num, float *rh){
 //	ESP_LOGI(TAG, "CrudoRH: %d\n",rawData);
 
 	*rh= (float)rawData * 0.000095;
+
+//Aplico las correcciones obtenidas a partir de la calibración del sensor de RH
+	double m = 1.054;
+	double b = -4.818;
+	*rh = *rh * m + b;
+
 	if (*rh < 0)   *rh = 0;
 	if (*rh > 100) *rh = 100;
 //	ESP_LOGI(TAG, "RH: %d\n",*rh);

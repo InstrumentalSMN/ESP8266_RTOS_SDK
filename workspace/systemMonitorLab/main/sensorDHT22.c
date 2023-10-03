@@ -212,6 +212,19 @@ uint8_t bitInx = 7;
 	humidity *= 0x100;					// >> 8
 	humidity += dhtData[1];
 	humidity /= 10;						// get the decimal
+//Aplico las correcciones obtenidas a partir de la calibración del sensor de RH
+	double m = 1.023;
+	double b = -2.853;
+	humidity = humidity * m + b;
+
+	if(humidity < 0){
+		humidity = 0;
+	}else if(humidity > 100){
+		humidity = 100;
+	}
+
+
+
 
 	// == get temp from Data[2] and Data[3]
 
@@ -219,6 +232,17 @@ uint8_t bitInx = 7;
 	temperature *= 0x100;				// >> 8
 	temperature += dhtData[3];
 	temperature /= 10;
+
+	//Aplico las correcciones obtenidas a partir de la calibración del sensor de temp
+	m = 1.003;
+	b = -0.584;
+	temperature = temperature * m + b;
+
+	if(temperature < -40){
+		temperature = -40;
+	}else if(temperature > 85){
+		temperature = 85;
+	}
 
 	if( dhtData[2] & 0x80 ) 			// negative temp, brrr it's freezing
 		temperature *= -1;
