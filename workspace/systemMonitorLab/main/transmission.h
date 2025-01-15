@@ -53,6 +53,8 @@
 
 
 /*==================[external functions declaration]=========================*/
+extern void encodeMessage126(uint8_t * buf, uint8_t * message,size_t message_len);
+extern void encodeMessage125(uint8_t * buf, uint8_t * message,size_t message_len);
 extern void tcp_client_task(void *pvParameters);
 
 

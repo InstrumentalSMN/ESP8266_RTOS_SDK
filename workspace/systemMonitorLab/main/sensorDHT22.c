@@ -224,8 +224,6 @@ uint8_t bitInx = 7;
 	}
 
 
-
-
 	// == get temp from Data[2] and Data[3]
 
 	temperature = dhtData[2] & 0x7F;
@@ -278,6 +276,6 @@ void DHT_task(void *pvParameter)
 
 		// -- wait at least 2 sec before reading again ------------
 		// The interval of whole process must be beyond 2 seconds !!
-		vTaskDelay( 500 / portTICK_RATE_MS );
+		vTaskDelay( 1000*SAMPLE_RATE_SENSORS / portTICK_RATE_MS );
 	}
 }
