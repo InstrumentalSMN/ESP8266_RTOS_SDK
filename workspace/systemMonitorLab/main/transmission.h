@@ -8,6 +8,7 @@
 
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include <freertos/queue.h>
 #include "esp_system.h"
 #include "esp_log.h"
 #include "esp_netif.h"
@@ -24,7 +25,7 @@
 #include "sensorDHT22.h"
 #include "sensorBMP280.h"
 #include "common.h"
-
+#include "lwip/apps/sntp.h"
 
 #ifdef CONFIG_EXAMPLE_IPV4
 #define HOST_IP_ADDR CONFIG_EXAMPLE_IPV4_ADDR
@@ -39,7 +40,11 @@
 
 /*==================[typedef]================================================*/
 
-
+// Define una estructura para el estado de la conexión y el socket
+typedef struct {
+    int ackConnect; // 1: conectado, 0: desconectado
+    int socketNumber;     // Número del socket o -1 si no hay socket
+} connectionInfo;
 
 
 
@@ -50,12 +55,16 @@
 //const char *TAG = "example";
 //const char *payload = "Message from ESP32 ";
 //const char *payload2[300];
-
+// Declaración externa de la cola
+extern QueueHandle_t connectionInfoQueue;
 
 /*==================[external functions declaration]=========================*/
 extern void encodeMessage126(uint8_t * buf, uint8_t * message,size_t message_len);
 extern void encodeMessage125(uint8_t * buf, uint8_t * message,size_t message_len);
+extern bool opTransmitMeasuareWebSocket(char * tableData,connectionInfo * connectionData);
 extern void tcp_client_task(void *pvParameters);
+extern void keep_alive_task(void *pvParameters);
+
 
 
 

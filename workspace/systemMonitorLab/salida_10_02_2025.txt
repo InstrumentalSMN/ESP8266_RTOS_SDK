@@ -1,0 +1,1859 @@
+Script iniciado (lun., 10 de feb. de 2025 11:31:28 a. m.
+)Toolchain path: /c/esp/ESP8266_RTOS_SDK/workspace/systemMonitorLab/\esp\xtensa-lx106-elf\bin/xtensa-lx106-elf-gcc
+Toolchain version: esp-2020r3-49-gd5524c1
+Compiler version: 8.4.0
+Python requirements from C:/esp/ESP8266_RTOS_SDK/requirements.txt are satisfied.
+MONITOR
+[0m[0K[0;33m--- idf_monitor on COM6 74880 ---[0m[0K[?25l
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl[0m[0K[43G[?25h[?25l[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m[0K
+[0K[?25h[?25l
+ ets Jan  8 2013,rst cause:2, boot mode:(3,7)[0K
+[0K
+load 0x40100000, len 7544, room 16[0K
+[0K[?25htail 8[0K[?25l
+chksum 0xa6[0K
+load 0x3ffe8408, len 24, room 0[0K
+tail 8[0K
+chksum 0x2f[0K
+[0K[?25hload 0x3ffe8420, len 3464, room 0[0K[?25l
+tail 8[0K
+chksum 0x61[0K
+csum 0x61[0K
+[0;32mI (43) boot: ESP-IDF 6a6130ee-dirty 2[0m[0K[?25h[0;32mnd stage bootloader[0m[0K[?25l
+[0;32mI (43) boot: compile time 17:34:55[0m[0K
+[0K[?25h[0;32mI (43) qio_mode: Enabling default flash chip QIO[0m[0K[?25l
+[0;32mI (51) boot: SPI Speed      : 40MHz[0m[0K
+[0;32mI [0m[0K[?25h[0;32m(57) boot: SPI Mode       : QIO[0m[0K[?25l
+[0;32mI (63) boot: SPI Flash Size : 2MB[0m[0K
+[0;32mI (70) boot: Partition Table:[0m[0K
+[0K[?25h[0;32mI (75) boot: ## Label            Usage          Type ST Offset   Length[0m[0K[?25l
+[0K[?25h[0;32mI (86) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m[0K[?25l
+[0K[?25h[0;32mI (98) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m[0K[?25l
+[0K[?25h[0;32mI (109) boot:  2 factory          factory app      00 00 00010000 000f0000[0m[0K[?25l
+[0;32mI (121) boot[0m[0K[?25h[0;32m: End of partition table[0m[0K[?25l
+[0;32mI (128) esp_image: segment 0: paddr=0x00010010 vaddr=0x40210010 size=0x5ce58 (380504) map[0m[0K
+[0K[?25h[0;33m0x40210010: _stext at ??:?[0m[0K[?25l
+[0K[?25h[?25l
+[0;32mI (270) esp_image: segment 1: paddr=0x0006ce70 vaddr=0x4026ce68 size=0x1[0m[0K[?25h[0;32m0204 ( 66052) map[0m[0K[?25l
+[0K[?25h[0;32mI (294) esp_image: segment 2: paddr=0x0007d07c vaddr=0x3ffe8000 size=0x00690 (  1680) load[0m[0K[?25l
+[0K[?25h[0;32mI (295) esp_image: segment 3: paddr=0x0007d714 vaddr=0x40100000 size=0x00080 (   128) load[0m[0K[?25l
+[0K[?25h[0;32mI (305) esp_image: segment 4: paddr=0x0007d79c vaddr=0x4010[0m[0K[0;32m0080 size=0x05be4 ( 23524) load[0m[0K[?25l
+[0K[?25h[0;32mI (326) boot: Loaded app from partition at offset 0x10000[0m[0K[?25l
+[0;32mI (346) gpio: GP[0m[0K[?25h[0;32mIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 1| Pullup: 1| Pulldown: 0| Intr:0 [0m[0K[?25l
+[0;32mI (350) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 1| Pullup: 1|[0m[0K[?25h[0;32m Pulldown: 0| Intr:0 [0m[0K[?25l
+[0;32mI (362) system_api: Base MAC address is not set, read default base MAC address from EFUSE[0m[0K
+[0K[?25h[0;32mI (375) system_api: Base MAC address is not set, read default base MAC address from EFUSE[0m[0K[?25l
+[0K[?25hphy_version: 1167.0, 14a6402, Feb 17 2022, 11:32:25, RTOS new[0K[?25l
+[0;32mI (442) phy_init: phy ver: 1167_0[0m[0K
+[0K[?25h[0;32mI (450) example_connect: Connecting to KAISER 2...[0m[0K[?25l
+[0K[?25h[0;32mI (1812) wifi:state: 0 -> 2 (b0)[0m[0K[?25l
+[0K[?25h[0;32mI (1834) wifi:state: 2 -> 3 (0)[0m[0K[?25l
+[0K[?25h[0;32mI (1861) wifi:state: 3 -> 5 (10)[0m[0K[?25l
+[0K[?25h[0;32mI (2913) wifi:[0m[0K[0;32mstate: 5 -> 0 (fc0)[0m[0K[?25l
+[0;32mI (2916) wifi:state: 0 -> 0 (6c0)[0m[0K
+[0K[?25h[0;32mI (2915) example_connect: Wi-Fi disconnected, trying to reconnect...[0m[0K[?25l
+[0K[?25h[0;32mI (4977) example_connect: Wi-Fi disconnected, trying to reconnect...[0m[0K[?25l
+[0K[?25h[0;32mI (5102) wifi:state: 0 -> 2 (b0)[0m[0K[?25l
+[0K[?25h[0;32mI (5147) wifi:state: 2 -> 3 (0)[0m[0K[?25l
+[0K[?25h[0;32mI (5177) wifi:state: 3 -> 5 (10)[0m[0K[?25l
+[0K[?25h[0;32mI (5294) wifi:connected with KAISER 2, aid = 1, channel 1, HT20, bssid = 70:a7:41:4c:fb:b7[0m[0K[?25l
+[0K[?25h[0;32mI (9312) tcpip_adapter:[0m[0K[?25l[0;32mI (9319) example_connect: Connected to KAISER 2ask: 255.255.255.0, gw: 10.10.13.1[0m[0K[14G[?25h[?25l[0;32mI (9319) example_connect: IPv4 address: 10.10.13.157255.255.255.0, gw: 10.10.13.1[0m[0K
+[0;32mI (9328) main: Esperando 2 segundos para comenzar en el prximo intervalo...[0m[0K
+[0K[?25h[0;32mI (9340) main: Keep Alive: Conexion inactiva[0m[0K[?25l
+[0;32mI (9347) main: Estado de conexion, dato de la cola: 1073695248[0m[0K
+[0K[?25h[0;32mI (9360) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (9364) main: Temp_ATH10: 26.05[0m[0K
+[0;32mI (9370) main: RH_ATH10: 64.74[0m[0K
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0;32mI (9385) main: *******************[0m[0K
+[0K
+[0;32mI (9387) main: Temp_DHT22: 25.90[0m[0K
+[0K[?25h[0;32mI (9391) main: RH_DHT22: 64.56[0m[0K[?25l
+dato 87[0;32mI (9402) main: *******************[0m[0K
+[0K
+[0;32mI (9404) main: Temp_BMP280: 22.85[0m[0K
+[0K[?25h[0;32mI (9410) main: Press_BMP280: 767.92[0m[0K[?25l
+[0;32mI (9417) main: Time is not set yet. Connecting to WiFi and getting time over NTP.[0m[0K[1G[?25h[?25l
+[0;32mI (9429) main: Initializing SNTP[0m[0K
+[0;32mI (9435) main: Waiting for system time to be set... (1/10)[0m[0K
+[0K[?25h[0;32mI (10351) main: Keep Alive: Conexion inactiva[0m[0K[?25l
+[0;32mI (10353) main: Estado de conexion, dato de la cola: 1073695248[0m[0K
+[0K[?25h[0;32mI (11333) main: -------------------------------------------------------------Socket created[0m[0K[?25l
+[0;32mI (11350) main: Successfully con[0m[0K[?25h[0;32mnected[0m[0K[?25l
+[0;32mI (11354) main: Envie correctamente el header de WEB SOCKET[0m[0K
+[0K
+[0K[?25h[0;32mI (11357) main: Numero de Socket 54[0m[0K[?25l
+[0;32mI (11360) main: ------------Datos:"M;0;0;10-02-2025;11:32:58;22.85;64.56;767.92;[0m[0K
+[0K[?25h[0;32mI (11371) main: Pude enviar sin problemas las mediciones[0m[0K[?25l
+[0;32mI (11380) main: Keep Alive: Conexion activa, enviando mensaje de kee[0m[0K[?25h[0;32mp alive[0m[0K[?25l
+[0;32mI (11391) main: Estado de conexion: 1[0m[0K
+[0;32mI (11398) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (12402) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (12405) main: Estado de conexion: 1[0m[0K
+[0;32mI (12407) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (13372) main: Numero de Socket 54[0m[0K[?25l
+[0K[?25h[0;32mI (13375) main: ------------Datos:"M;0;1;10-02-2025;11:33:00;22.85;64.56;767.92;[0m[0K[?25l
+[0;32mI (13380) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[0;32mI (13412) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (13415) main: Estado de conexion: 1[0m[0K
+[0;32mI (13416) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (14422) main: Keep Alive: Conexion activa, envian[0m[0K[0;32mdo mensaje de keep alive[0m[0K[?25l
+[0;32mI (14425) main: Estado de conexion: 1[0m[0K
+[0;32mI (14427) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (15432) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (15435) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (15437) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (16442) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (16445) main: Estado de conexion: 1[0m[0K
+[0;32mI (16447) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (17452) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (17455) main: Estado de conexion: 1[0m[0K
+[0;32mI (17457) main: Numero de [0m[0K[?25h[0;32mSocket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (18462) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (18465) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (18468) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (19375) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (19377) main: Temp_ATH10: 26.08[0m[0K
+[0;32mI [0m[0K[?25h[0;32m(19379) main: RH_ATH10: 64.63[0m[0K[?25l
+=== Reading DHT ===[0K
+[0;32mI (19400) main: *******************[0m[0K
+[0K
+[0;32mI (19402) main: Temp_DHT22: 25.90[0m[0K
+[0K[?25h[0;32mI (19404) main: RH_DHT22: 64.56[0m[0K[?25l
+[0;32mI (19415) main: *******************[0m[0K
+[0K
+[0;32mI (19417) main: Temp_BMP280: 25.40[0m[0K
+[0;32mI (19418) main: [0m[0K[?25h[0;32mPress_BMP280: 1007.37[0m[0K[?25l
+[0;32mI (19473) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0K[?25h[0;32mI (19476) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (19478) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (20483) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (20486) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (20488) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (21493) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (21496) main: Estado de conexion: 1[0m[0K
+[0;32mI (21498) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (22503) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (22506) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (22508) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (23383) main: Numero de Socket 54[0m[0K[?25l
+[0K[?25h[0;32mI (23386) main: ------------Datos:"M;0;2;10-02-2025;11:33:10;25.40;64.56;1007.37;[0m[0K[?25l
+[0;32mI (23391) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[0;32mI (23513) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (23516) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (23518) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (24523) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (24526) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (24528) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (25533) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (25536) main: Estado de conexion: 1[0m[0K
+[0;32mI (25538) main: Numero de Socket: 54[0m[0K[?25h[?25l
+[0K[?25h[0;32mI (26543) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (26546) main: Estado de c[0m[0K[?25h[0;32monexion: 1[0m[0K[?25l
+[0;32mI (26548) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (27553) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (27556) main: Estado de conexion: 1[0m[0K
+[0;32mI (27558) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (28563) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (28566) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (28568) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (29[0m[0K[0;32m376) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (29378) main: Temp_ATH10: 26.10[0m[0K
+[0;32mI (29380) main: RH_ATH10: 64.33[0m[0K
+=== Reading DHT ===[0K
+[0K[?25h[0;32mI (29411) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (29415) main: Temp_DHT22: 26.00[0m[0K
+[0;32mI (29416) main: RH_DHT22: 64.36[0m[0K
+[0K[?25h[0;32mI (29426) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (29428) main: Temp_BMP280: 25.42[0m[0K
+[0;32mI (29429) main: Press_BMP280: 1007.36[0m[0K
+[0K[?25h[0;32mI (29574) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI ([0m[0K[3G[?25h[?25l[0;32mI (29577) main: Estado de conexion: 1[0m[0K
+[0;32mI (29579) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (30584) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (30587) main: Estado de conexion[0m[0K[?25h[0;32m: 1[0m[0K[?25l
+[0;32mI (30589) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (31594) main: Keep Alive: Conex[0m[0K[0;32mion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (31597) main: Estado de conexion: 1[0m[0K
+[0;32mI (31599) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (32604) main: Keep [0m[0K[0;32mAlive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (32607) main: Estado de conexion: 1[0m[0K
+[0;32mI (32609) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (33394) main: Numero de Socket 54[0m[0K[?25l
+[0;32mI (33397) main: ------------Datos:"M;0;3;10-02-2025;11:33:20;25.42;64.36;1007.36;[0m[0K[?25h[?25l
+[0;32mI (33401) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[0;32mI (33614) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (33617) ma[0m[0K[?25h[0;32min: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (33619) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (3[0m[0K[0;32m4624) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (34627) main: Estado de conexion: 1[0m[0K
+[0;32mI (34629) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (35635) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (35638) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (35640) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (36645) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (36648) main: Estado de conexion: 1[0m[0K
+[0;32mI (36650) main: Numero de Soc[0m[0K[?25h[0;32mket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (37655) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (37658) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (37660) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (38665) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (38668) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (38670) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (39377) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (39379) main: Temp_ATH10: 26.12[0m[0K
+[0;32mI (39381) main: RH[0m[0K[?25h[0;32m_ATH10: 64.32[0m[0K[?25l
+=== Reading DHT ===[0K
+[0;32mI (39422) main: *******************[0m[0K
+[0K
+[0;32mI (39424) main: Temp_DHT2[0m[0K[?25h[0;32m2: 26.00[0m[0K[?25l
+[0;32mI (39425) main: RH_DHT22: 64.36[0m[0K
+[0;32mI (39437) main: *******************[0m[0K
+[0K
+[0;32mI (39440) main: Temp_BMP280: 25.43[0m[0K
+[0K[?25h[0;32mI (39441) main: Press_BMP280: 1007.36[0m[0K[?25l
+[0K[?25h[0;32mI (39675) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (39678) main: Estado de conexion: 1[0m[0K
+[0;32mI (39680) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (40685) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (40688) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (40690) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (41695) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (41698) main: Estado de conexion: 1[0m[0K
+[0;32mI (41701) [0m[0K[?25h[0;32mmain: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (42705) main: Keep Alive: Conexion activa, enviando mensaje[0m[0K[0;32m de keep alive[0m[0K[?25l
+[0;32mI (42708) main: Estado de conexion: 1[0m[0K
+[0;32mI (42710) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (43405) main: Numero de Socket 54[0m[0K[?25l
+[0;32mI (43408) main: ------------Datos:"M;0;4;10-02-2025;11:33:30;25.43;64.36;1007.36;[0m[0K
+[0;32mI (43413) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[0;32mI (43715) main: Keep Alive: Co[0m[0K[0;32mnexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (43718) main: Estado de conexion: 1[0m[0K
+[0;32mI (43720) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (44725) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (44728) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (44730) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (45736) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (45739) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (45741) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (46746) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (46749) main: Est[0m[0K[19G[?25h[?25l[0;32mI (46749) main: Estado de conexion: 1[0m[0K
+[0;32mI (46751) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (47756) main: Keep Alive: Conexion activa, envia[0m[0K[0;32mndo mensaje de keep alive[0m[0K[?25l
+[0;32mI (47759) main: Estado de conexion: 1[0m[0K
+[0;32mI (47761) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (48766) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (48769) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (48771) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (49379) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (49381) main: Temp_ATH10: 2[0m[0K[?25h[0;32m6.13[0m[0K[?25l
+[0;32mI (49383) main: RH_ATH10: 64.36[0m[0K
+=== Reading DHT ===[0K
+[0K[?25h[0;32mI (49433) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (49435) main: Temp_DHT22: 26.00[0m[0K
+[0;32mI (49436) main: RH_DHT22: 64.36[0m[0K
+[0K[?25h[0;32mI (49448) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (49450) main: Temp_BMP280: 25.40[0m[0K
+[0;32mI (49452) main: Press_BMP280: 1007.36[0m[0K
+[0K[?25h[0;32mI (49776) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (49780) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (49781) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (50786) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (50789) main: Estado de conexion: 1[0m[0K
+[0;32mI (50791) main: Numero de Socket: 54[0m[0K[1G[?25h[?25l
+[0K[?25h[0;32mI (51796) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (51799) main: Estado de conexion: 1[0m[0K
+[0;32mI (51801) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (52806) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (52809) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (52811) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (53416) main: Numero de Socket 54[0m[0K[?25l
+[0;32mI (53419) main: ------------Dat[0m[0K[?25h[0;32mos:"M;0;5;10-02-2025;11:33:40;25.40;64.36;1007.36;[0m[0K[?25l
+[0;32mI (53424) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[0;32mI (53817) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (53820) main: Estado de conexion: 1[0m[0K
+[0;32mI (53822) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (54827) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (54830) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (54832) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (55837) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (55840) main: Estado de conexion: 1[0m[0K
+[0;32mI (55842) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (56847) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (56851) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (56853) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (57857) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (57860) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (57862) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (58867) main: Keep Alive:[0m[0K[0;32m Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (58870) main: Estado de conexion: 1[0m[0K
+[0;32mI (58872) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (59379) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (59381) main: Temp_ATH10: 26.12[0m[0K
+[0;32mI (59383) main: RH_ATH10: 64.08[0m[0K
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0K[?25h[0;32mI (59444) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (59446) main: Temp_DHT22: 26.00[0m[0K
+[0;32mI (59448) main: RH_DHT22: 64.05[0m[0K
+[0K[?25h[0;32mI (59459) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (59461) main: Temp_BMP280: 25.36[0m[0K
+[0;32mI (59462) main: Press_BMP280: 1007.38[0m[0K
+[0K[?25h[?25l[0;32mI (59877) main: Keep Alive: Conexion activa, enviando mensaje [0m[0K[61G[?25h[?25l[0;32mI (59877) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (59880) main: Estado de conexion: 1[0m[0K
+[0;32mI (59882) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (60888) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (60891) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (60893) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[?25l[0;32mI (61898) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[75G[?25h[?25l
+[0;32mI (61901) main: Estado de conexion: 1[0m[0K
+[0;32mI (61903) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (62908) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (62911) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (62913) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (63428) main: Numero de Socket 54[0m[0K[?25l
+[0K[?25h[0;32mI (63431) main: ------------Datos:"M;0;6;10-02-2025;11:33:50;25.36;64.05;1007.38;[0m[0K[?25l
+[0;32mI (63436) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[0;32mI (63918) main: Keep Alive: Conexion activa, enviando mensaj[0m[0K[0;32me de keep alive[0m[0K[?25l
+[0;32mI (63922) main: Estado de conexion: 1[0m[0K
+[0;32mI (63924) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (64928) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (64932) main: Estado de conexion: 1[0m[0K
+[0;32mI (64933) main: Numero[0m[0K[?25h[0;32m de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (65938) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (65941) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (65943) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (66948) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (66951) main: Esta[0m[0K[?25h[0;32mdo de conexion: 1[0m[0K[?25l
+[0;32mI (66953) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (67958) main: Keep Alive: Conexion activa, enviando [0m[0K[0;32mmensaje de keep alive[0m[0K[?25l
+[0;32mI (67961) main: Estado de conexion: 1[0m[0K
+[0;32mI (67963) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (68968) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (68971) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (68973) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[?25l[0;32mI (69380) main: *********[0m[0K[24G[?25h[?25l[0;32mI (69380) main: *******************[0m[0K
+[0K
+[0;32mI (69383) main: Temp_ATH10: 26.06[0m[0K
+[0;32mI (69384) main: RH_ATH10: 62.93[0m[0K
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0;32mI (69455) main: *******************[0m[0K
+[0K
+[0K[?25h[0;32mI (69457) main: Temp_DHT22: 26.00[0m[0K[?25l
+[0;32mI (69458) main: RH_DHT22: 63.13[0m[0K
+[0;32mI (69470) main: *******************[0m[0K
+[0K
+[0K[?25h[0;32mI (69472) main: Temp_BMP280: 25.33[0m[0K[?25l
+[0;32mI (69473) main: Press_BMP280: 1007.35[0m[0K
+[0K[?25h[0;32mI (69979) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (69982) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (69984) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (70989) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (70992) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (70994) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (71999) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (72002) main: Estado de conexion: 1[0m[0K
+[0;32mI (72004) main: Numero de Soc[0m[0K[?25h[0;32mket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (73009) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (73012) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (73014) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (73439) main: Numero de Socket 5[0m[0K[0;32m4[0m[0K[?25l
+[0;32mI (73444) main: ------------Datos:"M;0;7;10-02-2025;11:34:00;25.33;63.13;1007.35;[0m[0K
+[0;32mI (73450) main: Pude envia[0m[0K[?25h[0;32mr sin problemas las mediciones[0m[0K[?25l
+[0K[?25h[0;32mI (74019) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (74022) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (74024) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (75029) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (75032) main: Estado de conexion: 1[0m[0K
+[0;32mI (75034) main: Numero[0m[0K[?25h[0;32m de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (76039) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (76042) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (76044) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (77049) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (77052) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (77054) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (78059) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (78062) main: Estado de conexion: 1[0m[0K
+[0;32mI (7806[0m[0K[?25h[0;32m4) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (79070) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (79073) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (79075) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (79382) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (79384) main: Temp_ATH10: 26.02[0m[0K
+[0;32mI (79386) main: RH_ATH10: 62.50[0m[0K[1G[?25h[?25l
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0;32mI (79467) ma[0m[0K[?25h[0;32min: *******************[0m[0K[?25l
+[0K
+[0;32mI (79469) main: Temp_DHT22: 26.00[0m[0K
+[0;32mI (79471) main: RH_DHT22: 62.62[0m[0K
+[0;32mI (79482) main: ******[0m[0K[?25h[0;32m*************[0m[0K[?25l
+[0K
+[0;32mI (79484) main: Temp_BMP280: 25.27[0m[0K
+[0;32mI (79485) main: Press_BMP280: 1007.39[0m[0K
+[0K[?25h[0;32mI (80080) main: [0m[0K[0;32mKeep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (80083) main: Estado de conexion: 1[0m[0K
+[0;32mI (80085) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (81090) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (81093) main: Estado de conexion: 1[0m[0K
+[0;32mI (81095) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (82100) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (82103) main: Estado de conexion: 1[0m[0K
+[0;32mI (82105) main: Numero de Socket[0m[0K[?25h[0;32m: 54[0m[0K[?25l
+[0K[?25h[0;32mI (83110) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (83113) main: Estado de conexion: 1[0m[0K
+[0;32mI (83115) main: Numero de Socket: [0m[0K[?25h[0;32m54[0m[0K[?25l
+[0K[?25h[0;32mI (83450) main: Numero de Socket 54[0m[0K[?25l
+[0;32mI (83453) main: ------------Datos:"M;0;8[0m[0K[?25h[0;32m;10-02-2025;11:34:10;25.27;62.62;1007.39;[0m[0K[?25l
+[0;32mI (83459) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[0;32mI (84120) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (84123) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (84125) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (85130) main: [0m[0K[0;32mKeep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (85134) main: Estado de conexion: 1[0m[0K
+[0;32mI (85136) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (86140) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (86143) main: Estado de conexion: 1[0m[0K
+[0;32mI (86145) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (87151) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (87154) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (87156) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (88161) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (88164) main: Estado de conexion: 1[0m[0K
+[0;32mI (88166) main: Numero de Socket: 54[0m[0K[36G[?25h[?25l
+[0K[?25h[0;32mI (89171) main: Keep Alive: Conexi[0m[0K[0;32mon activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (89174) main: Estado de conexion: 1[0m[0K
+[0;32mI (89176) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (89383) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (89385) main: Temp_ATH10: 25.94[0m[0K
+[0;32mI (89387) main: RH_ATH10: 62.88[0m[0K
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0K[?25h[0;31mE (89478) main: Sensor Timeout[0m[0K[?25l
+[0K
+[0;32mI (89480) main: *******************[0m[0K
+[0K
+[0K[?25h[0;32mI (89481) main: Temp_DHT22: 26.00[0m[0K[?25l
+[0;32mI (89483) main: RH_DHT22: 62.62[0m[0K
+[0;32mI (89489) main: *******************[0m[0K
+[0K
+[0;32mI (89494) main: Temp_BMP280: 25.28[0m[0K
+[0K[?25h[0;32mI (89500) main: Press_BMP280: 1007.40[0m[0K[?25l
+[0K[?25h[0;32mI (90181) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (90184) main: Estado de conexion: 1[0m[0K
+[0;32mI (90186) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (91191) main: Keep Alive: Conexion activa, enviando mensaje d[0m[0K[0;32me keep alive[0m[0K[?25l
+[0;32mI (91194) main: Estado de conexion: 1[0m[0K
+[0;32mI (91196) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (92201) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (92204) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (92206) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (93211) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (93214) main: Estado de conexion: 1[0m[0K
+[0;32mI (93216) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (93461) main: Numero de Socket 54[0m[0K[?25l
+[0K[?25h[0;32mI (93464) main: ------------Datos:"M;0;9;10-02-2025;11:34:20;25.28;62.62;1007.40;[0m[0K[?25l
+[0;32mI (93469) main: Pude enviar sin problemas las [0m[0K[?25h[0;32mmediciones[0m[0K[?25l
+[0K[?25h[0;32mI (94221) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (94224) main: Estado de conexion: 1[0m[0K
+[0;32mI (94226) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (95231) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (95234) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (95236) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (96242) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (96245) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (96247) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (97252) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (97255) main: Estado de conexion: 1[0m[0K
+[0;32mI (97257) main: Numero de[0m[0K[?25h[0;32m Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (98262) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (98265) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (98267) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (99272) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (99275) main: Estado de conexion: 1[0m[0K
+[0;32mI (9927[0m[0K[?25h[0;32m7) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (99385) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (99387) main:[0m[0K[?25h[0;32m Temp_ATH10: 25.92[0m[0K[?25l
+[0;32mI (99388) main: RH_ATH10: 61.93[0m[0K
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0;32mI (99489) main: *******************[0m[0K
+[0K
+[0;32mI (99491) main: Tem[0m[0K[?25h[0;32mp_DHT22: 25.90[0m[0K[?25l
+[0;32mI (99492) main: RH_DHT22: 62.31[0m[0K
+[0;32mI (99504) main: *******************[0m[0K
+[0K
+[0;32mI (99506) main: Temp_BMP280: 25.24[0m[0K
+[0K[?25h[0;32mI (99507) main: Press_BMP280: 1007.38[0m[0K[?25l
+[0K[?25h[0;32mI (100282) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (100285) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (100287) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (101292) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (101295) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (101297) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (102302) main: Keep Alive: C[0m[0K[0;32monexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (102305) main: Estado de conexion: 1[0m[0K
+[0;32mI (102307) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (103312) main: Keep Alive: Conexion activa, enviando mensaje[0m[0K[0;32m de keep alive[0m[0K[?25l
+[0;32mI (103315) main: Estado de conexion: 1[0m[0K
+[0;32mI (103317) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (103472) main: Numero de Socket 54[0m[0K[?25l
+[0K[?25h[0;32mI (103475) main: ------------Datos:"M;0;10;10-02-2025;11:34:30;25.24;62.31;1007.38;[0m[0K[?25l
+[0;32mI (103480) main: [0m[0K[?25h[0;32mPude enviar sin problemas las mediciones[0m[0K[?25l
+[0K[?25h[0;32mI (104323) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (104326) main: [0m[0K[?25h[0;32mEstado de conexion: 1[0m[0K[?25l
+[0;32mI (104328) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (105333) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (105336) main: Estado de conexion: 1[0m[0K
+[0;32mI (105338) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (106343) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (106346) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (106348) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (107353) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (107356) main: Estado de conexion: 1[0m[0K
+[0;32mI (107358) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (108363) main: Keep Alive: Conexion activa, enviand[0m[0K[0;32mo mensaje de keep alive[0m[0K[?25l
+[0;32mI (108366) main: Estado de conexion: 1[0m[0K
+[0;32mI (108368) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (109373) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (109377) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (109379) main: Numero de Socket: 54[0m[0K
+[0;32mI (109385) main: *******************[0m[0K
+[0K
+[0K[?25h[0;32mI (109392) main: Temp_ATH10: 25.83[0m[0K[?25l
+[0;32mI (109398) main: RH_ATH10: 61.35[0m[0K
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0K[?25h[0;32mI (109501) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (109502) main: Temp_DHT22: 25.79[0m[0K
+[0K[?25h[0;32mI (109504) main: RH_DHT22: 61.29[0m[0K[?25l
+[0;32mI (109515) main: *******************[0m[0K
+[0K
+[0;32mI (109517) main: Temp_BMP280: 25.20[0m[0K
+[0;32mI (109518) main: Press_BMP280: 10[0m[0K[?25h[0;32m07.38[0m[0K[?25l
+[0K[?25h[0;32mI (110403) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (110406) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (110408) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (111413) main: Keep Alive:[0m[0K[0;32m Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (111416) main: Estado de conexion: 1[0m[0K
+[0;32mI (111418) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (112423) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (112426) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (112428) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (113434) main: Keep Al[0m[0K[0;32mive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (113437) main: Estado de conexion: 1[0m[0K
+[0;32mI (113439) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (113484) main: Numero de Socket 54[0m[0K[?25l
+[0;32mI (113487) main: ------------Datos:"M;0;11;10-02-2025;11:34:40;25.20;61.29[0m[0K[?25h[0;32m;1007.38;[0m[0K[?25l
+[0;32mI (113491) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[0;32mI (114444) main: Keep Aliv[0m[0K[0;32me: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (114447) main: Estado de conexion: 1[0m[0K
+[0;32mI (114449) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (115454) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (115457) main: Estado de conexion: 1[0m[0K
+[0;32mI (1154[0m[0K[?25h[0;32m59) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (116464) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (116467) main: Estado de conexion: 1[0m[0K
+[0;32mI (116469) main: Numero de Socket: [0m[0K[?25h[0;32m54[0m[0K[?25l
+[0K[?25h[0;32mI (117474) main: Keep Alive: Conexion activa, enviando me[0m[0K[0;32mnsaje de keep alive[0m[0K[?25l
+[0;32mI (117477) main: Estado de conexion: 1[0m[0K
+[0;32mI (117479) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (118484) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (118487) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (118489) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (119407) main: *****[0m[0K[0;32m**************[0m[0K[?25l
+[0K
+[0;32mI (119409) main: Temp_ATH10: 25.84[0m[0K
+[0;32mI (119411) main: RH_ATH10: 60.74[0m[0K
+[0K[?25h[0;32mI (119494) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (119497) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (119499) main: Numero de Socket: 54[0m[0K
+=== Reading DHT ===[0K
+[0;32mI (119515) main: *******************[0m[0K
+[0K
+[0;32mI (119517) main: Temp_DHT22: 25.69[0m[0K
+[0K[?25h[0;32mI (119521) main: RH_DHT22: 60.78[0m[0K[?25l
+[0;32mI (119531) main: *******************[0m[0K
+[0K
+[0;32mI (119534) main: Temp_BMP280: 25.07[0m[0K
+[0;32mI (119540) main: Press_BMP280: 1007.39[0m[0K
+[0K[?25h[0;32mI (120545) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (120548) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (120550) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (121555) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (121559) main: Estado de conexion: 1[0m[0K
+[0;32mI (12156[0m[0K[?25h[0;32m1) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (122565) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (122568) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (122570) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (123495) m[0m[0K[0;32main: Numero de Socket 54[0m[0K[?25l
+[0;32mI (123498) main: ------------Datos:"M;0;12;10-02-2025;11:34:50;25.07;60.78;1007.39;[0m[0K
+[0;32mI (123503) main: Pude enviar sin [0m[0K[33G[?25h[?25l[0;32mI (123503) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[0;32mI (123575) main: Keep Alive: Con[0m[0K[0;32mexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (123578) main: Estado de conexion: 1[0m[0K
+[0;32mI (123580) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (124585) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (124588) main: Estado de conexion: 1[0m[0K
+[0;32mI (124590) main:[0m[0K[?25h[0;32m Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (125595) main: Keep Alive: Conexion activa, envian[0m[0K[0;32mdo mensaje de keep alive[0m[0K[?25l
+[0;32mI (125598) main: Estado de conexion: 1[0m[0K
+[0;32mI (125600) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (126605) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (126608) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (126610) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (127615) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (127618) main: Estado de conexion: 1[0m[0K
+[0;32mI (127620) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (128625) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (128628) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (128630) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (129408) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (129409) main: Temp_ATH10: 25.73[0m[0K
+[0K[?25h[0;32mI (129411) main: RH_ATH10: 59.83[0m[0K[?25l
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0;31mE (129532) main: Sensor Timeout[0m[0K
+[0K
+[0;32mI (129534) main: *******************[0m[0K
+[0K
+[0K[?25h[0;32mI (129536) main: Temp_DHT22: 25.69[0m[0K[?25l
+[0;32mI (129538) main: RH_DHT22: 60.78[0m[0K
+[0;32mI (129547) main: *******************[0m[0K
+[0K
+[0K[?25h[0;32mI (129549) main: Temp_BMP280: 25.10[0m[0K[?25l
+[0;32mI (129555) main: Press_BMP280: 1007.36[0m[0K
+[0K[?25h[0;32mI (129635) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (129638) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (129640) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (130646) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (130649)[0m[0K[?25h[0;32m main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (130651) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (131656) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (131659) main: Estado[0m[0K[?25h[0;32m de conexion: 1[0m[0K[?25l
+[0;32mI (131661) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (132666) main: [0m[0K[0;32mKeep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (132669) main: Estado de conexion: 1[0m[0K
+[0;32mI (132671) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (133506) main: Numero de Socket 54[0m[0K[?25l
+[0K[?25h[0;32mI (133509) main: ------------Datos:"M;0;13;10-02-2025;11:35:00;25.10;60.78;1007.36;[0m[0K[?25l
+[0;32mI (133515) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[0;32mI (133676) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (133679) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (133681) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (134686) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (134689) main: Estado de conexion: 1[0m[0K
+[0;32mI (134691) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (135696) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (135699) main: Estado[0m[0K[?25h[0;32m de conexion: 1[0m[0K[?25l
+[0;32mI (135701) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (136706) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (136709) main[0m[0K[?25h[0;32m: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (136712) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (137716) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (137719) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (137721) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (138727) main: Keep Alive: Conexion activa, enviando [0m[0K[0;32mmensaje de keep alive[0m[0K[?25l
+[0;32mI (138730) main: Estado de conexion: 1[0m[0K
+[0;32mI (138732) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (139409) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (139411) m[0m[0K[12G[?25h[?25l[0;32mI (139411) main: Temp_ATH10: 25.68[0m[0K
+[0;32mI (139413) main: RH_ATH10: 60.40[0m[0K
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0;32mI (139544) main: *******************[0m[0K
+[0K[?25h[?25l
+[0;32mI (139546) main: Temp_DHT22: 25.59[0m[0K
+[0;32mI (139548) main: RH_DHT22: 60.27[0m[0K
+[0;32mI (139559) main: *******************[0m[0K[?25h[?25l
+[0K
+[0;32mI (139561) main: Temp_BMP280: 25.16[0m[0K
+[0;32mI (139562) main: Press_BMP280: 1007.37[0m[0K
+[0K[?25h[0;32mI (139737) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (139740) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (139742) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (140747) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (140750) main: Estado de conexion: 1[0m[0K[38G[?25h[?25l
+[0;32mI (140752) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (141757[0m[0K[0;32m) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (141760) main: Estado de conexion: 1[0m[0K
+[0;32mI (141762) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (142767) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (142770) main: Estado de conexion: 1[0m[0K
+[0;32mI (142772) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (143517) main: Numero de Socket 54[0m[0K[?25l
+[0;32mI (143520) main: ------------Datos:"M;0;14;10-02-2025;11:35:10;[0m[0K[?25h[0;32m25.16;60.27;1007.37;[0m[0K[?25l
+[0;32mI (143525) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[0;32mI (143777) main: Keep Alive: Conex[0m[0K[0;32mion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (143780) main: Estado de conexion: 1[0m[0K
+[0;32mI (143782) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;31mE (144001) wifi: AES PN: 000000000000600e <= 0000000000006010[0m[0K[?25l
+[0;31mE (144005) wifi: AES PN: 000000000000[0m[0K[?25h[0;31m600f <= 0000000000006010[0m[0K[?25l
+[0K[?25h[0;32mI (144787) ma[0m[0K[0;32min: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (144790) main: Estado de conexion: 1[0m[0K
+[0;32mI (144792) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (145797) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (145800) main[0m[0K[?25h[0;32m: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (145802) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (146807) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (146810) main: Estado de conexion: 1[0m[0K
+[0;32mI (146812) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (147818) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (147821) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (147823) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (148828) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (148831) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (148833) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (149410) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (149412) main: Temp_ATH10: 25.72[0m[0K
+[0K[?25h[0;32mI (149414) main: RH_ATH10: 60.66[0m[0K[?25l
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0K[?25h[0;32mI (149555) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (149557) main: Temp_DHT22: 25.49[0m[0K
+[0;32mI (149559) main: RH_DHT22: 60.98[0m[0K
+[0K[?25h[0;32mI (149570) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (149572) main: Temp_BMP280: 25.17[0m[0K
+[0;32mI (149573) main: Press_BMP280: 1007.39[0m[0K
+[0K[?25h[0;32mI (149838) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (149841) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (149843) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (150848) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (150851) main: Estado de conexion: 1[0m[0K
+[0;32mI (150853) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (151858)[0m[0K[0;32m main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (151861) main: Estado de conexion: 1[0m[0K
+[0;32mI (151865) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (152868) main: Keep Alive: Conexion activa, enviando mensaje d[0m[0K[0;32me keep alive[0m[0K[?25l
+[0;32mI (152871) main: Estado de conexion: 1[0m[0K
+[0;32mI (152873) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (153528) main: Numero de Socket 54[0m[0K[?25l
+[0K[?25h[0;32mI (153531) main: ------------Datos:"M;0;15;10-02-2025;11:35:20;25.17;60.98;1007.39;[0m[0K[?25l
+[0;32mI (153536) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[0;32mI (153878) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (153881) main: Estado de conexion: 1[0m[0K
+[0;32mI (153883) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI[0m[0K[0;32m (154888) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (154891) main: Estado de conexion: 1[0m[0K
+[0;32mI (154893) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (155898) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (155901) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (155903) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (156909) main:[0m[0K[0;32m Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (156912) main: Estado de conexion: 1[0m[0K
+[0;32mI (156914) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (157919) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (157922) main: Estado de conexion: 1[0m[0K
+[0;32mI (157924) main: Numer[0m[0K[?25h[0;32mo de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (158929) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (158932) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (158934) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (159411) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (159413) main: Temp_ATH10: 25.75[0m[0K
+[0;32mI (159415) main: RH_ATH10: 61.50[0m[0K
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0K[?25h[0;32mI (159566) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (159568) main: Temp_DHT22: 25.39[0m[0K
+[0;32mI (159570) main: RH_DHT22: 61.60[0m[0K
+[0K[?25h[0;32mI (159581) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (159583) main: Temp_BMP280: 25.16[0m[0K
+[0;32mI (159584) main: Press_BMP280: 1007.38[0m[0K
+[0K[?25h[0;32mI (159939) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (159943) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (159944) main: Numero de Socket: 54[0m[0K
+[0K[?25h[?25l[0;32mI (160949) m[0m[0K[12G[?25h[?25l[0;32mI (160949) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (160952) main: Estado de conexion: 1[0m[0K
+[0;32mI (160954) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (161959) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (161962) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (161964) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (162969) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (162972) main: Estad[0m[0K[?25h[0;32mo de conexion: 1[0m[0K[?25l
+[0;32mI (162974) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (163539) main: Numero de Socket 54[0m[0K[?25l
+[0;32mI (163542) main: ------------Datos:"M;0;16;10-02-2025;11:35:30;25.16;61.60;1007.38;[0m[0K
+[0K[?25h[0;32mI (163547) main: Pude enviar sin problemas las mediciones[0m[0K[?25l
+[0K[?25h[0;32mI (163979) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (163982) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (163984) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (164990) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (164993) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (164995) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (166000) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (166003) main: Estado de conexion: 1[0m[0K
+[0;32mI (166005) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (167010) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (167014) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (167016) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (168020) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (168023) main: Estado de conexion: 1[0m[0K
+[0;32mI (168025) main: N[0m[0K[18G[?25h[?25l[0;32mI (168025) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (169030) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (169033) main: Estado de conexion: 1[0m[0K
+[0;32mI (169035) main: Nume[0m[0K[?25h[0;32mro de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (169412) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (169414) main: Temp_ATH10: 25.72[0m[0K
+[0;32mI (169416) main: RH_A[0m[0K[?25h[0;32mTH10: 60.11[0m[0K[?25l
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0;32mI (169577) main: *******************[0m[0K
+[0K
+[0K[?25h[0;32mI (169581) main: Temp_DHT22: 25.39[0m[0K[?25l
+[0;32mI (169583) main: RH_DHT22: 60.98[0m[0K
+[0;32mI (169592) main: *******************[0m[0K
+[0K
+[0K[?25h[0;32mI (169594) main: Temp_BMP280: 25.13[0m[0K[?25l
+[0;32mI (169596) main: Press_BMP280: 1007.38[0m[0K
+[0K[?25h[0;32mI (170040) main: Keep Alive[0m[0K[0;32m: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (170043) main: Estado de conexion: 1[0m[0K
+[0;32mI (170045) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (171050) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (171053) main: Estado de conexion: 1[0m[0K
+[0;32mI (171055) main: Numero de Socket: 5[0m[0K[?25h[0;32m4[0m[0K[?25l
+[0K[?25h[0;32mI (172060) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (172063) main: Estado de co[0m[0K[?25h[0;32mnexion: 1[0m[0K[?25l
+[0;32mI (172065) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (173071) main: Keep Alive: Conexion activa, enviando mensaj[0m[0K[0;32me de keep alive[0m[0K[?25l
+[0;32mI (173074) main: Estado de conexion: 1[0m[0K
+[0;32mI (173076) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (173551) main: Numero de Socket 54[0m[0K[?25l
+[0;32mI (173554) main: ------------Datos:"M;0;17;10-02-2025;11:35:40;25.13;60.98;1007.38;[0m[0K
+[0K[?25h[0;32mI (173559) main: Pude enviar sin problemas las mediciones[0m[0K[?25l
+[0K[?25h[0;32mI (174081) main: Keep Alive: Conexion activa, enviando mensaje de keep a[0m[0K[0;32mlive[0m[0K[?25l
+[0;32mI (174084) main: Estado de conexion: 1[0m[0K
+[0;32mI (174086) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (175091) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (175095) main: Estado de conexion: 1[0m[0K[1G[?25h[?25l
+[0;32mI (175096) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (176101) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (176104) main: Estado de conexion: 1[0m[0K
+[0;32mI (176106) main: Numero de Socket: 54[0m[0K
+[0K[?25h[?25l[0;32mI (177111) main: Keep Alive: Conexion activa, enviando mensaje de keep aliv[0m[0K[75G[?25h[?25l[0;32mI (177111) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (177114) main: Estado de conexion: 1[0m[0K
+[0;32mI (177116) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (178121) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (178124) main: Estado de conexion: 1[0m[0K
+[0;32mI (178126) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (179131) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (179134) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (179136) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (179413) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (179415) main: Temp_ATH10: 25.70[0m[0K
+[0K[?25h[0;32mI (179417) main: RH_ATH10: 59.84[0m[0K[?25l
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0;32mI (17[0m[0K[?25h[0;32m9588) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (179590) main: Temp_DHT22: 25.39[0m[0K
+[0;32mI (179592) main: RH_DHT22: 60.47[0m[0K
+[0;32mI (179603) main: **[0m[0K[?25h[0;32m*****************[0m[0K[?25l
+[0K
+[0;32mI (179606) main: Temp_BMP280: 25.07[0m[0K
+[0;32mI (179608) main: Press_BMP280: 1007.37[0m[0K
+[0K[?25h[0;32mI (180142) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (180145) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (180147) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (181152) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (181155) main:[0m[0K[?25h[0;32m Estado de conexion: 1[0m[0K[?25l
+[0;32mI (181157) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (182162) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (182165) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (182167) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (183172) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (183175) main: Estado de conexion: 1[0m[0K
+[0;32mI (183177) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (183562) main: Numero de Socket 54[0m[0K[?25l
+[0K[?25h[0;32mI (183565) main: ------------Datos:"M;0;18;10-02-2025;11:35:50;25.07;60.47;1007.37;[0m[0K[?25l
+[0;32mI (183570) main: Pude enviar sin prob[0m[0K[?25h[0;32mlemas las mediciones[0m[0K[?25l
+[0K[?25h[0;32mI (184182) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (184185) main: Estado de conexion: 1[0m[0K
+[0;32mI (184187) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (185192) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (185195) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (185197) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (186203) main: Keep Alive: Conexion act[0m[0K[0;32miva, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (186206) main: Estado de conexion: 1[0m[0K
+[0;32mI (186208) main: Numero de Socket: 54[0m[0K
+[0K[?25h[?25l[0;32mI (187213) main: Keep Alive: Conexion activa, enviando mensaje de keep aliv[0m[0K[75G[?25h[?25l[0;32mI (187213) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (187216) main: Estado de conexion: 1[0m[0K
+[0;32mI (187218) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (188223) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (188226) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (188228) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (189233) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (189236) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (189238) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (189415) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (189417) main: Temp_ATH10: 25.64[0m[0K
+[0K[?25h[0;32mI (189419) main: RH_ATH10: 59.52[0m[0K[?25l
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0K[?25h[0;32mI (189600) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (189602) main: Temp_DHT22: 25.29[0m[0K
+[0;32mI (1896[0m[0K[?25h[0;32m04) main: RH_DHT22: 60.16[0m[0K[?25l
+[0;32mI (189615) main: *******************[0m[0K
+[0K
+[0;32mI (189617) main: Temp_BMP280: 25.08[0m[0K
+[0;32mI (189618) main: Press_BMP280: 1007.37[0m[0K
+[0K[?25h[0;32mI (190243) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (190247) main: Estado de c[0m[0K[?25h[0;32monexion: 1[0m[0K[?25l
+[0;32mI (190248) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (191253) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (191256) main: Estado de conexion: 1[0m[0K
+[0;32mI (191258) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (192263) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (192266)[0m[0K[?25h[0;32m main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (192268) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (193273) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI ([0m[0K[2G[?25h[?25l[0;32mI (193276) main: Estado de conexion: 1[0m[0K
+[0;32mI (193278) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (193573) main: Numero de Socket 54[0m[0K[?25l
+[0;32mI (193576) main: ------------Datos:"M;0;19;10-02-2025;11:36:00;25.08;60.16;1007.37;[0m[0K
+[0K[?25h[0;32mI (193581) main: Pude enviar sin problemas las mediciones[0m[0K[?25l
+[0K[?25h[0;32mI (194283) main: Keep Al[0m[0K[0;32mive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (194286) main: Estado de conexion: 1[0m[0K
+[0;32mI (194288) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (195294) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (195297) main[0m[0K[?25h[0;32m: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (195299) main: Numero de Socket: 54[0m[0K
+[0K[?25h[?25l[0;32mI (196304) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[74G[?25h[?25l
+[0;32mI (196307) main: Estado de conexion: 1[0m[0K
+[0;32mI (196309) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (197314) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (197317) main: Estado de conexion: 1[0m[0K
+[0;32mI (197319) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (198324) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (198327) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (198329) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (199334) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (199337) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (199339) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (199416) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (199418) main: Temp_ATH10: 25.62[0m[0K
+[0;32mI (199420) main: RH_ATH10: 59.56[0m[0K
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0K[?25h[0;32mI (199611) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (199613) main: Temp_DHT22: 25.29[0m[0K
+[0;32mI (199615) main: RH[0m[0K[?25h[0;32m_DHT22: 60.37[0m[0K[?25l
+[0;32mI (199626) main: *******************[0m[0K
+[0K
+[0;32mI (199628) main: Temp_BMP280: 25.08[0m[0K
+[0;32mI (199629) main: Press_BMP280: 1007.37[0m[0K
+[0K[?25h[0;32mI (200344) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (200347) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (200349) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (201354) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (201357) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (201359) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (202364) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (202367) main: Estado de conexion: 1[0m[0K
+[0;32mI (202369) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (203374) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (203377) main: Estado de conexion: 1[0m[0K
+[0;32mI (203379) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (203585) main: Numero de Socket 54[0m[0K[?25l
+[0K[?25h[0;32mI (203588) main: ------------Datos:"M;0;20;10-02-2025;11:36:10;25.08;60.37;1007.37;[0m[0K[?25l
+[0;32mI (203594) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[?25l[0;32mI (204385) main: Keep Alive: Conexion activa, enviando mensaje de keep[0m[0K[70G[?25h[?25l[0;32mI (204385) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (204388) main: Estado de conexion: 1[0m[0K
+[0;32mI (204390) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (205395) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (205399) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (205400) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (206405) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (206408) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (206410) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (207415) main: Keep Alive: Conexion activa, enviando men[0m[0K[0;32msaje de keep alive[0m[0K[?25l
+[0;32mI (207418) main: Estado de conexion: 1[0m[0K
+[0;32mI (207420) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (208425) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (208428) main: Estado de conexion: 1[0m[0K
+[0;32mI (208430) main: Numero [0m[0K[?25h[0;32mde Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (209418) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (209419) main: Temp_ATH10: 25.63[0m[0K[1G[?25h[?25l
+[0;32mI (209421) main: RH_ATH10: 60.46[0m[0K
+[0;32mI (209435) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (209438) main: Estado de conexion: 1[0m[0K
+[0;32mI (209440) main: Numero de Socket: 54[0m[0K
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0;32mI (209623) main: *******************[0m[0K
+[0K
+[0;32mI (209625) main: Temp_DHT22: 25.29[0m[0K
+[0;32mI (209626) main: RH_DHT22: 61.08[0m[0K
+[0K[?25h[0;32mI (209637) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (209639) main: Temp_BMP280: 25.04[0m[0K
+[0;32mI (209640) main: Press_BMP280: 1007.36[0m[0K
+[0K[?25h[0;32mI (210445) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (210448) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (210450) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (211455) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (211458) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (211460) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[?25l[0;32mI (212465) main: Keep Alive: Conexion activa[0m[0K[44G[?25h[?25l[0;32mI (212465) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (212468) main: Estado de conexion: 1[0m[0K
+[0;32mI (212472) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (213476) main: Keep Alive: Conexion activa, enviando mensaje de keep a[0m[0K[0;32mlive[0m[0K[?25l
+[0;32mI (213479) main: Estado de conexion: 1[0m[0K
+[0;32mI (213481) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (213596) main: Numero de Socket 54[0m[0K[?25l
+[0K[?25h[0;32mI (213599) main: ------------Datos:"M;0;21;10-02-2025;11:36:20;25.04;61.08;1007.36;[0m[0K[?25l
+[0;32mI (213603) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[0;32mI (214486) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (214489) main: Estado de conexion: 1[0m[0K
+[0;32mI (214491) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (215496) main: Keep Alive[0m[0K[0;32m: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (215499) main: Estado de conexion: 1[0m[0K
+[0;32mI (215501) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (216506) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (216509) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (216511) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (217516) main: K[0m[0K[0;32meep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (217519) main: Estado de conexion: 1[0m[0K
+[0;32mI (217521) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (218526) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (218529) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (218531) main: Numero de Socket: 54[0m[0K
+[0K[?25h[?25l[0;32mI [0m[0K[2G[?25h[?25l[0;32mI (219418) main: *******************[0m[0K
+[0K
+[0;32mI (219420) main: Temp_ATH10: 25.64[0m[0K
+[0;32mI (219422) main: RH_ATH10: 59.31[0m[0K
+[0K[?25h[0;32mI (219536) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (219541) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (219543) main: Numero de Socket: 54[0m[0K
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0;32mI[0m[0K[1G[?25h[0;32mI (219634) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (219635) main: Temp_DHT22: 25.19[0m[0K
+[0;32mI (219637) main: RH_DHT22: 60.16[0m[0K
+[0;32mI (219648) m[0m[0K[?25h[0;32main: *******************[0m[0K[?25l
+[0K
+[0;32mI (219650) main: Temp_BMP280: 25.03[0m[0K
+[0;32mI (219651) main: Press_BMP280: 1007.33[0m[0K
+[0K[?25h[0;32mI (220546) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (220550) main: Estado de conexion: 1[0m[0K
+[0;32mI (220551) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (221557) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (221[0m[0K[5G[?25h[?25l[0;32mI (221560) main: Estado de conexion: 1[0m[0K
+[0;32mI (221562) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (222567) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (222570) main: Estado de conexion: 1[0m[0K
+[0;32mI (222572) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (223577) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (223580) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (223582) main: Numero de Socket: 54[0m[0K[?25l
+[0;32mI (223607) main: Numero de Socket 54[0m[0K
+[0;32mI (223610) main: ------------Datos:"M;[0m[0K[?25h[0;32m0;22;10-02-2025;11:36:30;25.03;60.16;1007.33;[0m[0K[?25l
+[0;32mI (223614) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[?25l[0;32mI (224587) main: Keep Alive: Conexion activa, enviando mensaj[0m[0K[60G[?25h[?25l[0;32mI (224587) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (224590) main: Estado de conexion: 1[0m[0K
+[0;32mI (224592) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (225597) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (225600) main: Estado de conexion: 1[0m[0K
+[0;32mI (225602) main: Numero[0m[0K[?25h[0;32m de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (226607) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (226610) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (226612) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (227617) main: Keep Aliv[0m[0K[0;32me: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (227620) main: Estado de conexion: 1[0m[0K
+[0;32mI (227622) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (228627) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (228630) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (228632) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (229420) main: *******************[0m[0K[?25l
+[0K[?25h[?25l
+[0;32mI (229422) main: Temp_ATH10: 25.62[0m[0K
+[0;32mI (229424) main: RH_ATH10: 59.51[0m[0K
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0K[?25h[0;32mI (229645) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (229647) main: Temp_DHT22: 25.19[0m[0K
+[0;32mI (229649) main: RH_DHT22: 60.47[0m[0K
+[0K[?25h[0;32mI (229650) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (229661) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (229668) main: Numero de Socket: 54[0m[0K[?25l
+[0;32mI (229677) main: *******************[0m[0K
+[0K
+[0;32mI (229681) main: Temp_BMP280: 25.01[0m[0K
+[0K[?25h[0;32mI (229687) main: Press_BMP280: 1007.37[0m[0K[?25l
+[0K[?25h[0;32mI (230668) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (230671) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (230673) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (23167[0m[0K[0;32m8) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (231681) main: Estado de conexion: 1[0m[0K
+[0;32mI (231683) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (232688) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (232691) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (232693) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (233618) main: Numero de Socket 54[0m[0K[?25l
+[0K[?25h[0;32mI (233621) main: ------------Datos:"M;0;23;10-02-2025;11:36:40;25.01;60.47;1007.37;[0m[0K[?25l
+[0;32mI (233626) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[0;32mI (233698) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (233701) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (233703) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (234708) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (234711) main: Estado de conexion: 1[0m[0K
+[0;32mI (234713) main: Numero de Socket: 54[0m[0K
+[0K[?25h[?25l[0;32mI (235718) main: Keep Alive: Conexion activa, enviando men[0m[0K[58G[?25h[?25l[0;32mI (235718) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (235721) main: Estado de conexion: 1[0m[0K
+[0;32mI (235723) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (236729) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (236732) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (236734) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (237739) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (237742) main: Estado de conexion: 1[0m[0K
+[0;32mI (237744) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (238749) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (238752) main: Estado de conexion: 1[0m[0K
+[0;32mI (238754) main: Numero de Socket: 54[0m[0K
+[0K[?25h[?25l[0;32mI (239421) main:[0m[0K[16G[?25h[?25l[0;32mI (239421) main: *******************[0m[0K
+[0K
+[0;32mI (239423) main: Temp_ATH10: 25.61[0m[0K
+[0;32mI (239425) main: RH_ATH10: 59.02[0m[0K
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0;32mI (239656) main: *******************[0m[0K
+[0K
+[0;32mI (239658) main: Temp_DHT22: 25.19[0m[0K
+[0K[?25h[0;32mI (239660) main: RH_DHT22: 60.27[0m[0K[?25l
+[0;32mI (239691) main: *******************[0m[0K
+[0K
+[0;32mI (239693) main: Temp_BMP280: 2[0m[0K[?25h[0;32m4.99[0m[0K[?25l
+[0;32mI (239694) main: Press_BMP280: 1007.34[0m[0K
+[0K[?25h[0;32mI (239759) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (239762) main: Estado de conexion: 1[0m[0K
+[0;32mI (239764) main: Num[0m[0K[?25h[0;32mero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (240769) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (240772) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (240774) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (241779) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (241782) main: Estado d[0m[0K[?25h[0;32me conexion: 1[0m[0K[?25l
+[0;32mI (241784) main: Numero de Socket: 54[0m[0K
+[0K[?25h[?25l[0;32mI (242789) main: Keep Alive: Conexion activa, [0m[0K[46G[?25h[?25l[0;32mI (242789) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (242792) main: Estado de conexion: 1[0m[0K
+[0;32mI (242794) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (243629) main: Numero de Socket 54[0m[0K[?25l
+[0;32mI (243632) main: ------------Datos:"M;0;24;10-02-2025;11:36:50;24.99;60.27;1007.34;[0m[0K
+[0;32mI (243637) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[0;32mI (243799) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (243803) main: Es[0m[0K[?25h[0;32mtado de conexion: 1[0m[0K[?25l
+[0;32mI (243805) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (244809) main: Keep Alive: Conexion activa, e[0m[0K[0;32mnviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (244813) main: Estado de conexion: 1[0m[0K
+[0;32mI (244814) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (245820) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (245823) main: Estado de c[0m[0K[?25h[0;32monexion: 1[0m[0K[?25l
+[0;32mI (245825) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (246830) main: Keep Alive: Conexion activa, enviando mensa[0m[0K[0;32mje de keep alive[0m[0K[?25l
+[0;32mI (246833) main: Estado de conexion: 1[0m[0K
+[0;32mI (246835) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (247840) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (247843) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (247845) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (248850) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (248853) main: Estado de conexion: 1[0m[0K
+[0;32mI (248855) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (249422) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (249424) main: Temp_ATH10: 25.58[0m[0K
+[0;32mI (249426) main: RH_ATH10: 58.72[0m[0K
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0K[?25h[0;32mI (249667) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (249669) main: Temp_DHT22: 25.19[0m[0K
+[0;32mI (249671) main: RH_DHT2[0m[0K[?25h[0;32m2: 59.86[0m[0K[?25l
+[0;32mI (249692) main: *******************[0m[0K
+[0K
+[0;32mI (249694) main: Temp_BMP280: 24.99[0m[0K
+[0;32mI (249696) main: Press_BMP280: 1007.36[0m[0K[?25h[?25l
+[0K[?25h[0;32mI (249860) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (249863) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (249865) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (250870) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (250873) main: Estado de conexion: 1[0m[0K
+[0;32mI (250875) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (251880) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (251883) main: Estado de conexion: 1[0m[0K
+[0;32mI (251885) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (252890) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (252893) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (252895) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (253641) main: Numero de Socket 54[0m[0K[?25l
+[0K[?25h[0;32mI (253644) main: ------------Datos:"M;0;25;10-02-2025;11:37:00;24.99;59.86;1007.36;[0m[0K[?25l
+[0;32mI (253650) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[0;32mI (253901) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (253904) main: Estado de conexion: 1[0m[0K
+[0;32mI (253906) main: Numero de Socket: 54[0m[0K
+[0K[?25h[?25l[0;32mI (254911) main: Keep Alive: Conexion activa, en[0m[0K[47G[?25h[?25l[0;32mI (254911) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (254914) main: Estado de conexion: 1[0m[0K
+[0;32mI (254916) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (255921) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (255924) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (255926) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (256931) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (256934) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (256936) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (257941) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (257944) main: Estado de conexion: 1[0m[0K
+[0;32mI (257946) [0m[0K[?25h[0;32mmain: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[?25l[0;32mI (258951) main: Keep Alive: Conexion activa, enviando mensaje[0m[0K[62G[?25h[?25l[0;32mI (258951) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (258954) main: Estado de conexion: 1[0m[0K
+[0;32mI (258956) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (259423) main: *******************[0m[0K[?25l
+[0K[?25h[?25l
+[0;32mI (259425) main: Temp_ATH10: 25.58[0m[0K
+[0;32mI (259427) main: RH_ATH10: 58.72[0m[0K
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0;32mI (259678[0m[0K[?25h[0;32m) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (259680) main: Temp_DHT22: 25.09[0m[0K
+[0;32mI (259682) main: RH_DHT22: 59.75[0m[0K
+[0;32mI (259693) main: *************[0m[0K[?25h[0;32m******[0m[0K[?25l
+[0K
+[0;32mI (259695) main: Temp_BMP280: 24.96[0m[0K
+[0;32mI (259696) main: Press_BMP280: 1007.33[0m[0K
+[0K[?25h[0;32mI (259961) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (259964) main: E[0m[0K[?25h[0;32mstado de conexion: 1[0m[0K[?25l
+[0;32mI (259966) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (260971) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (260974) main: Estado de conexion: 1[0m[0K
+[0;32mI (260976) main: N[0m[0K[?25h[0;32mumero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (261981) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (261984) main: Estado de conexion: 1[0m[0K
+[0;32mI (261986) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (262992) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (262995) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (262997) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (263652) main: Numero d[0m[0K[0;32me Socket 54[0m[0K[?25l
+[0;32mI (263655) main: ------------Datos:"M;0;26;10-02-2025;11:37:10;24.96;59.75;1007.33;[0m[0K
+[0;32mI (263660) main:[0m[0K[16G[?25h[?25l[0;32mI (263660) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[0;32mI (264002) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (264005) main: Estado de conexion: 1[0m[0K
+[0;32mI (264007)[0m[0K[?25h[0;32m main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (265012) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (265015) main:[0m[0K[?25h[0;32m Estado de conexion: 1[0m[0K[?25l
+[0;32mI (265017) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (266022) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (266025) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (266027) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (267032) ma[0m[0K[0;32min: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (267035) main: Estado de conexion: 1[0m[0K
+[0;32mI (267038) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (268042) main: Keep A[0m[0K[0;32mlive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (268045) main: Estado de conexion: 1[0m[0K
+[0;32mI (268047) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (269052) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (269055) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (269057) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (269424) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (269426) main: Temp_ATH10: 25.55[0m[0K
+[0;32mI (269428) main: RH_ATH10: 58.59[0m[0K
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0;32mI (269689) main: *******************[0m[0K
+[0K
+[0;32mI (269691) main: Temp_DHT22: 25.09[0m[0K
+[0K[?25h[0;32mI (269693) main: RH_DHT22: 59.65[0m[0K[?25l
+[0;32mI (269704) main: *******************[0m[0K
+[0K
+[0;32mI (269706) main: Temp_BMP280: 24.99[0m[0K
+[0;32mI (26970[0m[0K[8G[?25h[?25l[0;32mI (269708) main: Press_BMP280: 1007.34[0m[0K
+[0K[?25h[0;32mI (270062) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (270065) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (270067) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (271073) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (271076) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (271078) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[?25l[0;32mI (272083) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[76G[?25h[?25l
+[0;32mI (272086) main: Estado de conexion: 1[0m[0K
+[0;32mI (272088) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (273093) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (273096) main: Estado de conexion: 1[0m[0K
+[0;32mI (273098) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (273663) main: Numero de Socket 54[0m[0K[?25l
+[0;32mI (273666) main: -----------[0m[0K[28G[?25h[?25l[0;32mI (273666) main: ------------Datos:"M;0;27;10-02-2025;11:37:20;24.99;59.65;1007.34;[0m[0K
+[0;32mI (273670) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[0;32mI (274103) main: Keep Alive: Conexion activa,[0m[0K[0;32m enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (274106) main: Estado de conexion: 1[0m[0K
+[0;32mI (274108) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (275113)[0m[0K[0;32m main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (275116) main: Estado de conexion: 1[0m[0K
+[0;32mI (275119) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (276123) main: Keep Alive: Conexion activa, enviando mensaje de k[0m[0K[0;32meep alive[0m[0K[?25l
+[0;32mI (276126) main: Estado de conexion: 1[0m[0K
+[0;32mI (276128) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (277133) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (277136)[0m[0K[9G[?25h[?25l[0;32mI (277136) main: Estado de conexion: 1[0m[0K
+[0;32mI (277138) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (278143) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (278146) main: Estado de conexion: 1[0m[0K
+[0;32mI (278148) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (279153) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (279156) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (279158) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (279426) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (279428) main: Temp_ATH10: 25.58[0m[0K
+[0;32mI (279430) main: RH_ATH10: 58.91[0m[0K
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0;32mI (27970[0m[0K[8G[?25h[?25l[0;32mI (279701) main: *******************[0m[0K
+[0K
+[0;32mI (279703) main: Temp_DHT22: 25.09[0m[0K
+[0;32mI (279705) main: RH_DHT22: 60.06[0m[0K
+[0;32mI (27[0m[0K[?25h[0;32m9716) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (279718) main: Temp_BMP280: 24.93[0m[0K
+[0;32mI (279720) main: Press_BMP280: 1007.36[0m[0K
+[0K[?25h[0;32mI (280164) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (280167) main: Estado de conexion: 1[0m[0K
+[0;32mI (280169) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (281174) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (281178) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (281180) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (282184) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (282188) main: Estado de conexion: 1[0m[0K
+[0;32mI (282190) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (283194) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (283197) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (283199) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (283674) main: Numero de Socket 54[0m[0K[?25l
+[0K[?25h[0;32mI (283677) main: ------------Datos:"M;0;28;10-02-2025;11:37:30;24.93;60.06;1007.36;[0m[0K[?25l
+[0;32mI (283682) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[0;31mE (283835) wifi: AES PN: 0000000000006867 <= 00000[0m[0K[0;31m00000006869[0m[0K[?25l
+[0;31mE (283837) wifi: AES PN: 0000000000006868 <= 0000000000006869[0m[0K
+[0K[?25h[0;32mI [0m[0K[0;32m(284204) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (284207) main: Estado de conexion: 1[0m[0K
+[0;32mI (284209) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;31mE (284355) wifi: AES PN: 0000000000006875 <= 0000000000006876[0m[0K[?25l
+[0K[?25h[0;32mI (285214) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (285217) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (285219) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (286225) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (286228) main: Estado de conexion: 1[0m[0K
+[0;32mI (286230) main: Numer[0m[0K[22G[?25h[?25l[0;32mI (286230) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (287235) main: Keep Alive: Conexion activa, enviando mensaje de keep a[0m[0K[0;32mlive[0m[0K[?25l
+[0;32mI (287238) main: Estado de conexion: 1[0m[0K
+[0;32mI (287240) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (288245) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (288248) main: Estado de conexion: 1[0m[0K
+[0;32mI (288250) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;31mE (288338) wifi: AES PN: 00000000000068bc <= 0000000[0m[0K[0;31m0000068bd[0m[0K[?25l
+[0K[?25h[?25l[0;32mI (289255) main: Keep Alive: Conexion activa, enviando mensaje de keep [0m[0K[70G[?25h[?25l[0;32mI (289255) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (289259) main: Estado de conexion: 1[0m[0K
+[0;32mI (289261) [0m[0K[11G[?25h[?25l[0;32mI (289261) main: Numero de Socket: 54[0m[0K
+[0K[?25h[?25l[0;32mI (289427) main: *********[0m[0K[26G[?25h[?25l[0;32mI (289427) main: *******************[0m[0K
+[0;32mI (289429) main: Temp_ATH10: 25.54[0m[0K
+[0K[?25h[0;32mI (289431) main: RH_ATH10: 57.89[0m[0K[?25l
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0;32mI (289712) main: *******************[0m[0K
+[0K
+[0;32mI (289714) main: Temp_DHT22: 25.09[0m[0K
+[0K[?25h[0;32mI (289716) main: RH_DHT22: 59.14[0m[0K[?25l
+[0;32mI (289727) main: *******************[0m[0K
+[0K
+[0;32mI (289729) main: Temp_BMP280: 24.94[0m[0K
+[0;32mI (289730) main: Press_BMP280: 1007.38[0m[0K
+[0K[?25h[?25l[0;32mI (290265) main: Keep Alive: Conexion activa, enviando me[0m[0K[57G[?25h[?25l[0;32mI (290265) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (290268) main: Estado de conexion: 1[0m[0K
+[0;32mI (290270) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (291275) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (291278) main: Estado de conexion: 1[0m[0K
+[0;32mI (291280) main: Numero de Socket: 54[0m[0K
+[0K[?25h[?25l[0;32mI (292285) main: Keep Alive: Conexion activa, enviando mensaje de kee[0m[0K[69G[?25h[?25l[0;32mI (292285) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (292288) main: Estado de conexion: 1[0m[0K
+[0;32mI (292290) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (293295) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (293298) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (293300) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (293685) main: Numero de Socket 54[0m[0K[?25l
+[0;32mI (293688) main: ------------Datos:"M;0;29;10-02-2025;11:3[0m[0K[57G[?25h[?25l[0;32mI (293688) main: ------------Datos:"M;0;29;10-02-2025;11:37:40;24.94;59.14;1007.38;[0m[0K
+[0;32mI (293693) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[0;32mI (294305) main: Keep Alive: Conexion activa[0m[0K[0;32m, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (294308) main: Estado de conexion: 1[0m[0K
+[0;32mI (294310) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (295316) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (295319) main: Estado de conexion:[0m[0K[36G[?25h[?25l[0;32mI (295319) main: Estado de conexion: 1[0m[0K
+[0;32mI (295321) main: Numero de Socket: 54[0m[0K
+[0K[?25h[?25l[0;32mI (296326) main: Keep Alive: Conexion activa, enviando mensaje de keep al[0m[0K[73G[?25h[?25l[0;32mI (296326) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (296329) main: Estado de conexion: 1[0m[0K
+[0;32mI (296331) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (297336) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (297339) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (297341) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (298346) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (298349) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (298351) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (299356) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (299359) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (299361) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (299428) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (299431) main: Temp_ATH10: 25.52[0m[0K
+[0;32mI (299[0m[0K[?25h[0;32m433) main: RH_ATH10: 57.12[0m[0K[?25l
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0;32mI (299723) main: *******************[0m[0K
+[0K
+[0K[?25h[0;32mI (299725) main: Temp_DHT22: 25.09[0m[0K[?25l
+[0;32mI (299727) main: RH_DHT22: 58.42[0m[0K
+[0;32mI (299738) main: *******************[0m[0K
+[0K
+[0K[?25h[0;32mI (299740) main: Temp_BMP280: 24.87[0m[0K[?25l
+[0;32mI (299741) main: Press_BMP280: 1007.38[0m[0K
+[0K[?25h[0;32mI (300366) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (300369) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (300371) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (301376) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (301379) main: Estado de conexion: 1[0m[0K
+[0;32mI (301381) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (302387) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (302390) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (302392) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[?25l[0;32mI (303397)[0m[0K[10G[?25h[?25l[0;32mI (303397) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (303400) main: Estado de conexion: 1[0m[0K
+[0;32mI (303402) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (303697) main: Numero de Socket 54[0m[0K[?25l
+[0K[?25h[0;32mI (303700) main: ------------Datos:"M;0;30;10-02-2025;11:37:50;24.87;58.42;1007.38;[0m[0K[?25l
+[0;32mI (303706) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[?25l[0;32mI (304407) main: Keep Alive: Conexion acti[0m[0K[41G[?25h[?25l[0;32mI (304407) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (304410) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (304412) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (305[0m[0K[0;32m417) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (305420) main: Estado de conexion: 1[0m[0K
+[0;32mI (305422) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (3[0m[0K[0;32m06427) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (306430) main: Estado de conexion: 1[0m[0K
+[0;32mI (306432) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (307437) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (307440) main: Estado de conexion: 1[0m[0K
+[0;32mI (307442) main: Numero de Socket: [0m[0K[?25h[0;32m54[0m[0K[?25l
+[0K[?25h[0;32mI (308447) main: Keep Alive:[0m[0K[0;32m Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (308450) main: Estado de conexion: 1[0m[0K
+[0;32mI (308452) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (309429) main: *******************[0m[0K[?25l
+[0K
+[0K[?25h[0;32mI (309431) main: Temp_ATH10: 25.49[0m[0K[?25l
+[0;32mI (309433) main: RH_ATH10: 56.83[0m[0K
+[0;32mI (309457) main: Keep Alive: Conexion acti[0m[0K[?25h[0;32mva, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (309460) main: Estado de conexion: 1[0m[0K
+[0;32mI (309462) main: Numero de Socket: 54[0m[0K
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0;32mI (309734) main: *******************[0m[0K
+[0K
+[0;32mI (309736) main: Temp_DH[0m[0K[?25h[0;32mT22: 25.09[0m[0K[?25l
+[0;32mI (309738) main: RH_DHT22: 58.02[0m[0K
+[0;32mI (309749) main: *******************[0m[0K
+[0K
+[0;32mI (309751) main: Temp_BMP280: 24.90[0m[0K
+[0K[?25h[0;32mI (309752) main: Press_BMP280: 1007.38[0m[0K[?25l
+[0K[?25h[0;32mI (310467) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (310470) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (310472) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (311477) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (311480) main: Estado de conexion: 1[0m[0K
+[0;32mI (311482) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (312488) main: Keep Alive: Conexion activa, enviando mensaje de keep[0m[0K[0;32m alive[0m[0K[?25l
+[0;32mI (312491) main: Estado de conexion: 1[0m[0K
+[0;32mI (312493) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (313498) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (313501) main: Estado de conexion: 1[0m[0K
+[0;32mI (313503) main[0m[0K[?25h[0;32m: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (313708) main: [0m[0K[0;32mNumero de Socket 54[0m[0K[?25l
+[0;32mI (313711) main: ------------Datos:"M;0;31;10-02-2025;11:38:00;24.90;58.02;1007.38;[0m[0K
+[0;32mI (313716) main: Pude env[0m[0K[?25h[0;32miar sin problemas las mediciones[0m[0K[?25l
+[0K[?25h[0;32mI (314508) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (314511) main: Estado de conexion: 1[0m[0K
+[0;32mI (314513) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (315518) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (315521) main: Estado de conexion: 1[0m[0K
+[0;32mI (315523) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (316528) main: Keep Alive: Conexion activa, envia[0m[0K[0;32mndo mensaje de keep alive[0m[0K[?25l
+[0;32mI (316531) main: Estado de conexion: 1[0m[0K
+[0;32mI (316533) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (317538) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (317541) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (317543) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (318548) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (318551) main: Estado de conexion:[0m[0K[36G[?25h[?25l[0;32mI (318551) main: Estado de conexion: 1[0m[0K
+[0;32mI (318553) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (319430) main: *******************[0m[0K[?25l
+[0K
+[0K[?25h[0;32mI (319432) main: Temp_ATH10: 25.50[0m[0K[?25l
+[0;32mI (319434) main: RH_ATH10: 57.70[0m[0K
+[0K[?25h[0;32mI (319558) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (319561) main: Estado de conexion: 1[0m[0K
+[0;32mI (319563) main: Numero de Socket: 54[0m[0K
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0;31mE (319746) main: Sensor Timeout[0m[0K
+[0K
+[0K[?25h[0;32mI (319747) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (319749) main: Temp_DHT22: 25.09[0m[0K
+[0;32mI (319751) main: RH_DHT22: 58.02[0m[0K
+[0;32mI (319760) main: *******************[0m[0K
+[0K
+[0K[?25h[0;32mI (319763) main: Temp_BMP280: 24.89[0m[0K[?25l
+[0;32mI (319768) main: Press_BMP280: 1007.38[0m[0K
+[0K[?25h[0;32mI (320569) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (320572) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (320574) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (321579) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (321582) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (321584) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (322589) main: Keep Alive: Conex[0m[0K[0;32mion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (322592) main: Estado de conexion: 1[0m[0K
+[0;32mI (322594) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (323599) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (323[0m[0K[5G[?25h[?25l[0;32mI (323602) main: Estado de conexion: 1[0m[0K
+[0;32mI (323604) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (323719) main: Numero de Socket 54[0m[0K[?25l
+[0;32mI (323722) main: ------------Datos:"M;0;32;10-02-2025;11:38:10;24.89;58.02;1007.38;[0m[0K
+[0K[?25h[0;32mI (323726) main: Pude enviar sin problemas las mediciones[0m[0K[?25l
+[0K[?25h[0;32mI (324609) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (324612) main: Estado de conexion: 1[0m[0K
+[0;32mI (324614) m[0m[0K[?25h[0;32main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI ([0m[0K[0;32m325619) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (325622) main: Estado de conexion: 1[0m[0K
+[0;32mI (325624) main: Numero de Socket: 54[0m[0K
+[0K[?25h[?25l[0;32mI (326629) main: Keep Alive: Conexion activa, enviando men[0m[0K[58G[?25h[?25l[0;32mI (326629) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (326633) main: Estado de conexion: 1[0m[0K
+[0;32mI (326634) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (327639) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (327642) main: Estado de conexion: 1[0m[0K
+[0;32mI (327645) main: Numero[0m[0K[23G[?25h[?25l[0;32mI (327645) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (328649) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (328652) main: Estado de co[0m[0K[29G[?25h[?25l[0;32mI (328652) main: Estado de conexion: 1[0m[0K
+[0;32mI (328654) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (329432) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (329434) main: Temp_ATH10: 25.54[0m[0K
+[0;32mI (329436) main: RH_ATH10: 57.68[0m[0K
+[0K[?25h[0;32mI (329660) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (329663) main: Estado de conexion: 1[0m[0K
+[0;32mI (329665) main: Numero de Socket: 54[0m[0K
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0;31mE (329758) main: Sensor Timeout[0m[0K
+[0K
+[0K[?25h[0;32mI (329759) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (329761) main: Temp_DHT22: 25.09[0m[0K
+[0;32mI (32[0m[0K[5G[?25h[?25l[0;32mI (329763) main: RH_DHT22: 58.02[0m[0K
+[0;32mI (329772) main: *******************[0m[0K
+[0K
+[0;32mI (329774) main: Temp_BMP280: 24.87[0m[0K
+[0;32mI (329780)[0m[0K[?25h[0;32m main: Press_BMP280: 1007.38[0m[0K[?25l
+[0K[?25h[?25l[0;32mI (330670) main: Keep Alive: Conex[0m[0K[33G[?25h[?25l[0;32mI (330670) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (330673) main: Estado de conexion: 1[0m[0K
+[0;32mI (330675) main: Nume[0m[0K[20G[?25h[?25l[0;32mI (330675) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (331680) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (331683) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (331685) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (332690) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (332693) main: Estado de conexion: 1[0m[0K
+[0;32mI (332695) main: Numero de Sock[0m[0K[?25h[0;32met: 54[0m[0K[?25l
+[0K[?25h[0;32mI (333700) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (333704) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (333706) main: Numero de Socket: 54[0m[0K
+[0;32mI (333730) main: Numero de Socket 54[0m[0K
+[0K[?25h[0;32mI (333733) main: ------------Datos:"M;0;33;10-02-2025;11:38:20;24.87;58.02;1007.38;[0m[0K[?25l
+[0;32mI (333737) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[0;32mI (334711) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (334714) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (334716) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (335720) main: Keep Alive: Conexion activa, enviando mensaje[0m[0K[0;32m de keep alive[0m[0K[?25l
+[0;32mI (335723) main: Estado de conexion: 1[0m[0K
+[0;32mI (335725) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI [0m[0K[0;32m(336730) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (336733) main: Estado de conexion: 1[0m[0K
+[0;32mI (336735) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (337740) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (3[0m[0K[?25h[0;32m37743) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (337745) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (338751) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (338754) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (338756) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (339435) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (339437) main: Temp_ATH10: 25.50[0m[0K
+[0;32mI[0m[0K[?25h[0;32m (339439) main: RH_ATH10: 56.88[0m[0K[?25l
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0K[?25h[0;32mI (339769) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (339770) main: Temp_DHT22: 24.99[0m[0K
+[0;32mI (339772) main: RH_DHT22: 58.22[0m[0K
+[0K[?25h[0;32mI (339774) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (339784) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (339791) main: Numero de Socket: 54[0m[0K[?25l
+[0;32mI (339800) main: *******************[0m[0K
+[0K
+[0;32mI (339804) main: Temp_BMP280: 24.88[0m[0K
+[0;32mI (339811) main: Press_BMP280: 1007.37[0m[0K
+[0K[?25h[0;32mI (340801) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (340804) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (340806) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (341811) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (341814) main: Estado de conexion: 1[0m[0K
+[0;32mI (341816) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (342821) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (342824) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (342826) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (343741) main: Numero de Socket 54[0m[0K[?25l
+[0K[?25h[0;32mI (343744) main: ------------Datos:"M;0;34;10-02-2025;11:38:30;24.88;58.22;1007.37;[0m[0K[?25l
+[0;32mI (343749) main: Pude enviar sin pro[0m[0K[36G[?25h[?25l[0;32mI (343749) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[0;32mI (343831) main[0m[0K[0;32m: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (343834) main: Estado de conexion: 1[0m[0K
+[0;32mI (343836) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (344841) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (344844) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (344846) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (345851) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (345854) main: Estado de conexion: 1[0m[0K
+[0;32mI (345856) [0m[0K[?25h[0;32mmain: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (346861) main: Keep Alive: Conexion activa, enviando m[0m[0K[0;32mensaje de keep alive[0m[0K[?25l
+[0;32mI (346864) main: Estado de conexion: 1[0m[0K
+[0;32mI (346866) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (347872) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (347875) main: Estado de conexion: 1[0m[0K
+[0;32mI (3[0m[0K[?25h[0;32m47877) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (348882) main: Keep Alive: Conexion activa, enviando mensaje [0m[0K[0;32mde keep alive[0m[0K[?25l
+[0;32mI (348885) main: Estado de conexion: 1[0m[0K
+[0;32mI (348887) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (349434) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (349436) main: Temp_ATH10: 25.47[0m[0K
+[0;32mI (349438) main: RH_ATH10: 56.98[0m[0K
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0;32mI (349779) main: *******************[0m[0K
+[0K
+[0;32mI (349781) main: Temp_DHT22: 24.99[0m[0K
+[0K[?25h[0;32mI (349783) main: RH_DHT22: 58.22[0m[0K[?25l
+[0;32mI (349814) main: *******************[0m[0K
+[0K
+[0;32mI (349816) main: Temp_BMP28[0m[0K[27G[?25h[?25l[0;32mI (349816) main: Temp_BMP280: 24.84[0m[0K
+[0;32mI (349817) main: Press_BMP280: 1007.37[0m[0K
+[0K[?25h[0;32mI (349892) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (349895) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (349897) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (350902) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (350905) main: Estado de conexion: 1[0m[0K
+[0;32mI (350907) main: Numero de Socket: 54[0m[0K
+[0K[?25h[?25l[0;32mI (351912) main: Keep Alive: Conexion activa, enviando mensaje de [0m[0K[66G[?25h[?25l[0;32mI (351912) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (351916) main: Estado de conexion: 1[0m[0K
+[0;32mI (351918) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (352922) main: Keep Alive: Conexion ac[0m[0K[0;32mtiva, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (352925) main: Estado de conexion: 1[0m[0K
+[0;32mI (352927) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (353752) main: Numero de Socket 54[0m[0K[?25l
+[0;32mI (353755) ma[0m[0K[?25h[0;32min: ------------Datos:"M;0;35;10-02-2025;11:38:40;24.84;58.22;1007.37;[0m[0K[?25l
+[0;32mI (353760) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[0;32mI (353932) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (353935) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (353937) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (354942) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (354945) main: Estado de conexion: 1[0m[0K
+[0;32mI (354947) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (355953) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (355956) main: Estado de conexion: 1[0m[0K
+[0;32mI (355958) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (356963) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (356966) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (356968) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (357973) main: Keep Alive: Conexion acti[0m[0K[0;32mva, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (357976) main: Estado de conexion: 1[0m[0K
+[0;32mI (357978) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (358987) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (35899[0m[0K[7G[?25h[?25l[0;32mI (358990) main: Estado de conexion: 1[0m[0K
+[0;32mI (358991) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (359435) main: **[0m[0K[0;32m*****************[0m[0K[?25l
+[0K
+[0;32mI (359437) main: Temp_ATH10: 25.40[0m[0K
+[0;32mI (359439) main: RH_ATH10: 56.98[0m[0K
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0;32mI (359790) main: *******************[0m[0K
+[0K
+[0;32mI (359792) main: Temp_DHT22: 24.99[0m[0K
+[0K[?25h[0;32mI (359794) main: RH_DHT22: 58.12[0m[0K[?25l
+[0;32mI (359815) main: *******************[0m[0K
+[0K
+[0;32mI (359817) main: Temp_BMP280: 24.87[0m[0K
+[0;32mI (359818) main: Press_BMP280: 1007.35[0m[0K
+[0K[?25h[0;32mI (359993) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (359996) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (359998) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (361003) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (361006) main: Estado de conexion: 1[0m[0K
+[0;32mI (361008) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (362013) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (362016) main: Estado de conexion: 1[0m[0K
+[0;32mI (362018) main: N[0m[0K[?25h[0;32mumero de Socket: 54[0m[0K[?25l
+[0K[?25h[?25l[0;32mI (363023) main: Keep Alive: Conexion activa, enviando mensaje de ke[0m[0K[68G[?25h[?25l[0;32mI (363023) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (363026) main: Estado de conexion: 1[0m[0K
+[0;32mI (363028) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (363763) main: Numero de Socket 54[0m[0K[?25l
+[0K[?25h[0;32mI (363766) main: ------------Datos:"M;0;36;10-02-2025;11:38:50;24.87;58.12;1007.35;[0m[0K[?25l
+[0;32mI (363771) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[0;32mI (364033) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (364036) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (364038) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (365044) main: Keep Alive: Conexion activa, envi[0m[0K[0;32mando mensaje de keep alive[0m[0K[?25l
+[0;32mI (365047) main: Estado de conexion: 1[0m[0K
+[0;32mI (365049) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (366054) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (366057) main: Estado de conexion: 1[0m[0K
+[0;32mI (366059) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (367064) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (367067) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (367069) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (368074) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (368077) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (368079) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (369084) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (369087) main: Estado de conexion: 1[0m[0K
+[0;32mI (369089) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (369436) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (369438) main: Temp_ATH10: 25.42[0m[0K
+[0;32mI (369440) main: RH_ATH10: 57.79[0m[0K
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0;32mI (369802) main: *******************[0m[0K
+[0K
+[0;32mI (369803) main: Temp_DHT22: 24.89[0m[0K
+[0K[?25h[0;32mI (369805) main: RH_DHT22: 58.83[0m[0K[?25l
+[0;32mI (369816) main: *******************[0m[0K
+[0K
+[0;32mI (369818) main: Temp_BMP280: 24.89[0m[0K
+[0K[?25h[0;32mI (369819) main: Press_BMP280: 1007.33[0m[0K[?25l
+[0K[?25h[0;32mI (370094) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (370097) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (370099) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (371104) main: Keep Alive: Co[0m[0K[0;32mnexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (371107) main: Estado de conexion: 1[0m[0K
+[0;32mI (371109) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (372115) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (372118) main: Estado de conexion: 1[0m[0K
+[0;32mI (372120) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (373125) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (373128) main: Estado de conexion: 1[0m[0K
+[0;32mI (373130) main: Num[0m[0K[?25h[0;32mero de Socket: 54[0m[0K[?25l
+[0K[?25h[?25l[0;32mI (373775) main: Numero de Socket 54[0m[0K[36G[?25h[?25l
+[0;32mI (373778) main: ------------Datos:"M;0;37;10-02-2025;11:39:00;24.89;58.83;1007.33;[0m[0K
+[0;32mI (373783) main: Pude enviar sin p[0m[0K[?25h[0;32mroblemas las mediciones[0m[0K[?25l
+[0K[?25h[?25l[0;32mI (374135) main: Keep Alive: Conexion activa, enviando mensaje de [0m[0K[64G[?25h[?25l[0;32mI (374135) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (374138) main: Estado de conexion: 1[0m[0K
+[0;32mI (374140) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (375145) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (375148) main: Estado de conexion: 1[0m[0K
+[0;32mI (375151) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (376155) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (376158) main: Estado de conexion: 1[0m[0K
+[0;32mI (376160) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (377165) main: Keep Alive: Conexion activ[0m[0K[0;32ma, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (377168) main: Estado de conexion: 1[0m[0K
+[0;32mI (377170) main: Numero de Socket: 54[0m[0K
+[0K[?25h[?25l[0;32mI (378175) main: Keep Alive: Conexion activa, enviando mensaje de keep al[0m[0K[73G[?25h[?25l[0;32mI (378175) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (378178) main: Estado de conexion: 1[0m[0K
+[0;32mI (378180) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (379186) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (379189) main: Estado de conexion: 1[0m[0K
+[0;32mI (379191) main[0m[0K[?25h[0;32m: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (379438) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (379440) main: Temp_ATH10: 25.46[0m[0K
+[0;32mI (379442) main: RH_ATH10: 57.35[0m[0K
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0K[?25h[0;32mI (379814) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (379815) main: Temp_DHT22: 24.89[0m[0K
+[0;32mI (379817) [0m[0K[?25h[0;32mmain: RH_DHT22: 58.83[0m[0K[?25l
+[0;32mI (379828) main: *******************[0m[0K
+[0K
+[0;32mI (379830) main: Temp_BMP280: 24.89[0m[0K
+[0;32mI (379831) main: Press_BMP280: [0m[0K[?25h[0;32m1007.36[0m[0K[?25l
+[0K[?25h[0;32mI (380196) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (380199) main: Estado de conexion: 1[0m[0K
+[0;32mI (38[0m[0K[?25h[0;32m0201) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[?25l[0;32mI (381206) main: Keep Alive: Conexion activ[0m[0K[43G[?25h[?25l[0;32mI (381206) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (381209) main: Estado de conexion: 1[0m[0K
+[0;32mI (381211) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (382216) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (382220) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (382222) main: Numero de Socket: 54[0m[0K
+[0K[?25h[?25l[0;32mI (383[0m[0K[6G[?25h[?25l[0;32mI (383226) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (383229) main: Estado de conexion: 1[0m[0K
+[0;32mI (383231) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (383786)[0m[0K[0;32m main: Numero de Socket 54[0m[0K[?25l
+[0;32mI (383789) main: ------------Datos:"M;0;38;10-02-2025;11:39:10;24.89;58.83;1007.36;[0m[0K
+[0;32mI (383795) main: Pude enviar sin problemas las[0m[0K[?25h[0;32m mediciones[0m[0K[?25l
+[0K[?25h[0;32mI (384236) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (384239) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (384241) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (385246) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (385249) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (385251) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (386256) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (386259) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (386261) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (387266) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (387269) main: Estado de conexion: 1[0m[0K
+[0;32mI (387271) main: Numero de Sock[0m[0K[?25h[0;32met: 54[0m[0K[?25l
+[0K[?25h[?25l[0;32mI (388277) main: Keep Alive: Conexion activa, envian[0m[0K[52G[?25h[?25l[0;32mI (388277) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K
+[0;32mI (388280) main: Estado de conexion: 1[0m[0K
+[0;32mI (388282) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (389287) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (389290) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (389292) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (389439) main: **[0m[0K[0;32m*****************[0m[0K[?25l
+[0K
+[0;32mI (389441) main: Temp_ATH10: 25.47[0m[0K
+[0;32mI (389443) main: RH_ATH10: 57.73[0m[0K
+[0K[?25h=== Reading DHT ===[0K[?25l
+[0K[?25h[0;32mI (389825) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (389826) main: Temp_DHT22: 24.99[0m[0K
+[0;32mI (389828) main: RH_DHT22: 59.04[0m[0K
+[0K[?25h[0;32mI (389839) main: *******************[0m[0K[?25l
+[0K
+[0;32mI (389841) main: Temp_BMP280: 24.87[0m[0K
+[0;32mI (389842) main: Press_BMP280: 1007.34[0m[0K
+[0K[?25h[0;32mI (390297) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (390300) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (390302) main: Numero de Socket:[0m[0K[33G[?25h[?25l[0;32mI (390302) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (391307) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0K[?25h[0;32mI (391310) main: Estado de conexion: 1[0m[0K[?25l
+[0;32mI (391312) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (392317) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (392320) main: Estado de conexion: 1[0m[0K
+[0;32mI (392322) main: Numero d[0m[0K[25G[?25h[?25l[0;32mI (392322) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (393327) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (393330) main: Estado de conexion: 1[0m[0K
+[0;32mI (393332) main: Numero de Socket: 54[0m[0K
+[0K[?25h[0;32mI (393797) main: Numero de Socket 54[0m[0K[?25l
+[0K[?25h[0;32mI (393800) main: ------------Datos:"M;0;39;10-02-2025;11:39:20;24.87;59.04;1007.34;[0m[0K[?25l
+[0;32mI (393806) main: Pude enviar sin problemas las mediciones[0m[0K
+[0K[?25h[0;32mI (394337) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (394340) main: Estado de conexion: 1[0m[0K
+[0K[?25h[0;32mI (394342) main: Numero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (395347) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (395350) main: Estado de conexion: 1[0m[0K
+[0;32mI (395352) main: Num[0m[0K[?25h[0;32mero de Socket: 54[0m[0K[?25l
+[0K[?25h[0;32mI (396357) main: Keep Alive: Conexion activa, enviando mensaje de keep alive[0m[0K[?25l
+[0;32mI (396361) main: Estado de conexion: 1[0m[0K
+[0;32mI (396362) mai[0m[0K[14G[?25h[?25l[0;32mI (396362) main: Numero de Socket: 54[0m[0K
+[0K[?25h

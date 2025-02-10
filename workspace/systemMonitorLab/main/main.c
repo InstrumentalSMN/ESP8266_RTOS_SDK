@@ -27,6 +27,7 @@
 #include "sensorDHT22.h"
 #include "transmission.h"
 #include "sensorBMP280.h"
+#include "configRTC.h"
 
 
 void app_main()
@@ -37,8 +38,13 @@ void app_main()
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_event_loop_create_default());
     ESP_ERROR_CHECK(example_connect());
+
+    // Inicializa la cola utilizada para revisar el estado de de la conexión con el servidor WEBsocket
+    connectionInfoQueue = xQueueCreate(1, sizeof(connectionInfo)); // Cola para un solo entero
     xTaskCreate(tcp_client_task, "tcp_client", 4096, NULL, 5, NULL);
+    xTaskCreate(keep_alive_task, "keep_alive_task", 2048, NULL, 4, NULL);
     xTaskCreate(aht10_task, "aht10", 2048, NULL, 7, NULL);
 	xTaskCreate( &DHT_task, "DHT_task", 2048, NULL, 8, NULL );
 	xTaskCreate( bmp280_task, "bmp280", 2048, NULL, 4, NULL );
+	xTaskCreate(sntp_set_rtc_task, "sntp_set_rtc_task", 2048, NULL, 10, NULL);
 }

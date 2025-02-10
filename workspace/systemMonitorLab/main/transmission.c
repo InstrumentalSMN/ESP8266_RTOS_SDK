@@ -1,4 +1,219 @@
 #include "transmission.h"
+#include "lwip/apps/sntp.h"
+#include "configRTC.h"
+// Definición de la cola (¡NO inicializar aquí!)
+QueueHandle_t connectionInfoQueue;
+char payload[300];
+
+void tcp_client_task(void *pvParameters)
+{
+//    char rx_buffer[128];
+    char addr_str[128];
+    int addr_family;
+    int ip_protocol;
+    connectionInfo connectionData; // Variable para la estructura
+    connectionData.socketNumber= -1;
+    connectionData.ackConnect = 0;
+	int err =0;
+    uint32_t counter = 0;
+    time_t now;
+    struct tm timeinfo;
+   	char fecha[] = "15-01-2025";
+	char hora[] = "10:10:00";
+
+    #ifdef CONFIG_EXAMPLE_IPV4
+            struct sockaddr_in destAddr;
+            destAddr.sin_addr.s_addr = inet_addr(HOST_IP_ADDR);
+            destAddr.sin_family = AF_INET;
+            destAddr.sin_port = htons(PORT);
+            addr_family = AF_INET;
+            ip_protocol = IPPROTO_TCP;
+            inet_ntoa_r(destAddr.sin_addr, addr_str, sizeof(addr_str) - 1);
+    #else // IPV6
+            struct sockaddr_in6 destAddr;
+            inet6_aton(HOST_IP_ADDR, &destAddr.sin6_addr);
+            destAddr.sin6_family = AF_INET6;
+            destAddr.sin6_port = htons(PORT);
+            destAddr.sin6_scope_id = tcpip_adapter_get_netif_index(TCPIP_ADAPTER_IF_STA);
+            addr_family = AF_INET6;
+            ip_protocol = IPPROTO_IPV6;
+            inet6_ntoa_r(destAddr.sin6_addr, addr_str, sizeof(addr_str) - 1);
+    #endif
+
+// Obtener el tiempo actual
+   time(&now);
+   localtime_r(&now, &timeinfo);
+   // Calcular cuántos segundos faltan para el próximo intervalo
+   int seconds_until_next_interval = TRANSMISSION_INTERVAL - (timeinfo.tm_sec % TRANSMISSION_INTERVAL);
+   // Esperar hasta el próximo intervalo
+  ESP_LOGI(TAG, "Esperando %d segundos para comenzar en el próximo intervalo...", seconds_until_next_interval);
+  vTaskDelay(seconds_until_next_interval * 1000 / portTICK_PERIOD_MS);
+
+
+    while (1) {
+
+//    	if (xQueueReceive(connectionInfoQueue, &connectionData, 0) != pdTRUE) {
+//    		connectionData.ackConnect = 0; // Si no hay mensaje en la cola, asume desconectado
+//        }
+    	if(connectionData.ackConnect != 1){
+			while(1){
+				connectionData.socketNumber =  socket(addr_family, SOCK_STREAM, ip_protocol);
+				if (connectionData.socketNumber < 0) {
+					ESP_LOGE(TAG, "Unable to create socket: errno %d", errno);
+					break;
+				}
+				ESP_LOGI(TAG, "-------------------------------------------------------------Socket created");
+				err = connect(connectionData.socketNumber, (struct sockaddr *)&destAddr, sizeof(destAddr));
+				if (err != 0) {
+					ESP_LOGE(TAG, "Socket unable to connect: errno %d", errno);
+					connectionData.ackConnect = 0;
+					xQueueSend(connectionInfoQueue, &connectionData, 0); // Envia el estado a la cola
+					close(connectionData.socketNumber);
+//					continue;
+				}else{
+					ESP_LOGI(TAG, "Successfully connected");
+					connectionData.ackConnect = 1;
+					xQueueSend(connectionInfoQueue,&connectionData, 0); // Envia el estado a la cola
+					char host[] = "10.10.13.180";
+					uint16_t server_port = 8000;
+					char path[] = "/ws/environment-monitoring-system-server/";
+					char key[] = "x3JJHMbDL1EzLkh9GBhXDw==";
+					char header[256];
+					sprintf(header,	"GET %s HTTP/1.1\r\n"
+									"Host: %s:%d\r\n"
+									"Upgrade: websocket\r\n"
+									"Connection: Upgrade\r\n"
+									"Sec-WebSocket-Key: %s\r\n"
+									"Sec-WebSocket-Version: 13\r\n"
+									"\r\n", path, host, server_port, key);
+
+			//    	sprintf(payloadWebSocket,"i,%d,%s,%s,%s,%s,%s,%s,\r\n",counter,temp_string_dht22,temp_string_aht10,temp_string_bmp280,rh_string_dht22,rh_string_aht10,pressure_string_bmp280);
+					err = send(connectionData.socketNumber, header, strlen(header), 0);
+					if (err < 0) {
+						ESP_LOGE(TAG, "Error occured during sending: errno %d", errno);
+						connectionData.ackConnect = 0; //Ponemos en cero el ack para que intente conectar otra vez
+						xQueueSend(connectionInfoQueue, &connectionData, 0); // Envia el estado a la cola
+						break;
+					}else{
+						ESP_LOGI(TAG, "Envie correctamente el header de WEB SOCKET\r\n");
+					}
+
+					break;
+				}
+			}
+    	}
+		ESP_LOGI(TAG, "Numero de Socket %d", connectionData.socketNumber);
+
+//		Formato de mensaje
+//		M;numNodo;numMed;fecha;hora;temperature;humidity;pressure;
+//		Ejemplo
+//		M;0;0;15-01-2025;10:10:00;30.23;40.24;1000.23;
+//		Obtengo la hora y la fecha
+		time(&now);
+		localtime_r(&now, &timeinfo);
+//		strftime(strftime_buf, sizeof(strftime_buf), "%c", &timeinfo);
+		strftime(hora, sizeof(hora), "%H:%M:%S", &timeinfo);
+		strftime(fecha, sizeof(fecha), "%d-%m-%Y", &timeinfo);
+		sprintf(payload,"------------Datos:\"M;%d;%d;%s;%s;%s;%s;%s;",NUMERO_DE_NODO,counter,fecha,hora,temp_string_bmp280,rh_string_dht22,pressure_string_bmp280);
+		ESP_LOGI(TAG,payload);
+    	sprintf(payload,"{\"message\":\"M;%d;%d;%s;%s;%s;%s;%s;\"}",NUMERO_DE_NODO,counter,fecha,hora,temp_string_bmp280,rh_string_dht22,pressure_string_bmp280);
+
+    	if(opTransmitMeasuareWebSocket(payload, &connectionData )==OK){
+    		ESP_LOGI(TAG, "Pude enviar sin problemas las mediciones");
+//    		ESP_LOGI(TAG, "----------------------The current date/time in Buenos Aires is: %s", strftime_buf);
+
+    	}else{
+    		ESP_LOGI(TAG, "No se pudo enviar las mediciones");
+    	}
+		counter = counter + 1;
+		// Esperar hasta el próximo intervalo
+		time(&now);
+		localtime_r(&now, &timeinfo);
+		seconds_until_next_interval = TRANSMISSION_INTERVAL - (timeinfo.tm_sec % TRANSMISSION_INTERVAL);
+
+
+        vTaskDelay(seconds_until_next_interval*1000 / portTICK_PERIOD_MS);
+    }
+//    vTaskDelete(NULL);
+}
+
+bool opTransmitMeasuareWebSocket(char * tableData,connectionInfo * connectionData){
+
+	uint32_t len = (uint32_t)strlen(tableData);
+	int err;
+	char message[600];
+	if(len > 125){
+		encodeMessage126((uint8_t * )tableData,(uint8_t * )message,sizeof(message));
+
+		err = send(connectionData->socketNumber, message, strlen(tableData)+8, 0);
+    	if (err < 0) {
+			ESP_LOGE(TAG, "Error occured during sending: errno %d", errno);
+			connectionData->ackConnect = 0;
+			return FAIL;
+		}
+
+	}else{
+		encodeMessage125((uint8_t * )tableData,(uint8_t * )message,sizeof(message));
+		err = send(connectionData->socketNumber, message, strlen(tableData)+6, 0);
+    	if (err < 0) {
+			ESP_LOGE(TAG, "Error occured during sending: errno %d", errno);
+			connectionData->ackConnect = 0;
+			return FAIL;
+		}
+	}
+	return OK;/*OK = 0*/
+
+}
+
+
+
+
+
+
+// Implementación de la tarea keep_alive_task (como en la respuesta anterior)
+void keep_alive_task(void *pvParameters) {
+    connectionInfo receivedData;
+	int err =0;
+
+    while (1) {
+    	xQueueReceive(connectionInfoQueue, &receivedData, 0);
+//        if (xQueueReceive(connectionInfoQueue, &receivedData, 0) == pdTRUE) {
+		if (receivedData.ackConnect == 1) {
+			ESP_LOGI(TAG, "Keep Alive: Conexion activa, enviando mensaje de keep alive");
+			ESP_LOGI(TAG, "Estado de conexion: %d", receivedData.ackConnect);
+			ESP_LOGI(TAG, "Numero de Socket: %d", receivedData.socketNumber);
+			// Enviar mensaje de keep-alive
+			char aux[] = "{\"message\":\"\"}";
+			char message[20];
+			encodeMessage125((uint8_t * )aux,(uint8_t * )message,sizeof(message));
+//				ESP_LOGI(TAG, "MensajeSINCodificar: %s",aux);
+//				ESP_LOGI(TAG, "MensajeCodificado: %s",message);
+			err = send(receivedData.socketNumber, message, strlen(aux)+6, 0);
+			if (err < 0) {
+				ESP_LOGE(TAG, "Error occured during sending: errno %d", errno);
+				receivedData.ackConnect = 0;
+				break;
+			}
+			// ... (código para enviar mensaje de keep-alive)
+		} else {
+			ESP_LOGI(TAG, "Keep Alive: Conexion inactiva");
+			ESP_LOGI(TAG, "Estado de conexion, dato de la cola: %d", receivedData.ackConnect);
+			// Realizar acciones necesarias si la conexión está inactiva
+		}
+//        }
+        vTaskDelay(1000 / portTICK_PERIOD_MS); // Ejemplo: revisa cada 5 segundos
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 void encodeMessage126(uint8_t * buf, uint8_t * message,size_t message_len){
 	size_t buf_len = strlen((const char*)buf);
@@ -66,128 +281,4 @@ void encodeMessage125(uint8_t * buf, uint8_t * message, size_t message_len){
 		}
 
 
-}
-
-void tcp_client_task(void *pvParameters)
-{
-//    char rx_buffer[128];
-    char addr_str[128];
-    int addr_family;
-    int ip_protocol;
-    int sock, err, ackConnect= 0;
-    uint32_t counter = 0;
-    #ifdef CONFIG_EXAMPLE_IPV4
-            struct sockaddr_in destAddr;
-            destAddr.sin_addr.s_addr = inet_addr(HOST_IP_ADDR);
-            destAddr.sin_family = AF_INET;
-            destAddr.sin_port = htons(PORT);
-            addr_family = AF_INET;
-            ip_protocol = IPPROTO_TCP;
-            inet_ntoa_r(destAddr.sin_addr, addr_str, sizeof(addr_str) - 1);
-    #else // IPV6
-            struct sockaddr_in6 destAddr;
-            inet6_aton(HOST_IP_ADDR, &destAddr.sin6_addr);
-            destAddr.sin6_family = AF_INET6;
-            destAddr.sin6_port = htons(PORT);
-            destAddr.sin6_scope_id = tcpip_adapter_get_netif_index(TCPIP_ADAPTER_IF_STA);
-            addr_family = AF_INET6;
-            ip_protocol = IPPROTO_IPV6;
-            inet6_ntoa_r(destAddr.sin6_addr, addr_str, sizeof(addr_str) - 1);
-    #endif
-
-    while (1) {
-
-    	if(ackConnect != 1){
-			while(1){
-				sock =  socket(addr_family, SOCK_STREAM, ip_protocol);
-				if (sock < 0) {
-					ESP_LOGE(TAG, "Unable to create socket: errno %d", errno);
-		//                break;
-				}
-				ESP_LOGI(TAG, "Socket created");
-				err = connect(sock, (struct sockaddr *)&destAddr, sizeof(destAddr));
-				if (err != 0) {
-					ESP_LOGE(TAG, "Socket unable to connect: errno %d", errno);
-					ackConnect = 0;
-					close(sock);
-		//                continue;
-				}else{
-					ESP_LOGI(TAG, "Successfully connected");
-					ackConnect = 1;
-			//    	char aux[200] = "{\'message\':\'hola\'}";
-					char host[] = "10.10.13.180";
-					uint16_t server_port = 8000;
-					char path[] = "/ws/environment-monitoring-system-server/";
-					char key[] = "x3JJHMbDL1EzLkh9GBhXDw==";
-					char header[256];
-					sprintf(header,	"GET %s HTTP/1.1\r\n"
-									"Host: %s:%d\r\n"
-									"Upgrade: websocket\r\n"
-									"Connection: Upgrade\r\n"
-									"Sec-WebSocket-Key: %s\r\n"
-									"Sec-WebSocket-Version: 13\r\n"
-									"\r\n", path, host, server_port, key);
-//					int32_t a = strlen(header);
-
-
-
-			//		int32_t len = send(WEB_SOCK, header, strlen(header));
-			//		if (a != len){ //valido que se envie correctamente
-			//			printf("Mensaje no enviado\r\n");
-			//			gpioWrite( GPIO8, ON );
-			//			gpioWrite( GPIO7, OFF );
-			//			return ERROR;
-			//		}
-
-
-			//    	sprintf(payloadWebSocket,"i,%d,%s,%s,%s,%s,%s,%s,\r\n",counter,temp_string_dht22,temp_string_aht10,temp_string_bmp280,rh_string_dht22,rh_string_aht10,pressure_string_bmp280);
-					err = send(sock, header, strlen(header), 0);
-					if (err < 0) {
-						ESP_LOGE(TAG, "Error occured during sending: errno %d", errno);
-						break;
-					}else{
-						ESP_LOGI(TAG, "Envie correctamente el header de WEB SOCKET\r\n");
-					}
-
-					break;
-				}
-			}
-    	}
-//    	char aux[] = "{\"message\":\"\"}";
-//    	char aux[] = "{\"message\":\"hola\"}";
-    	char aux[] = "{\"message\":\"holamundobuenasholamundobuenasholamundobuenasholamundobuenasholamundobuenasholamundobuenasholamundobuenasholamundobuenasholab6\"}";
-    	char message[140];
-
-//    	encodeMessage125((uint8_t * )aux,(uint8_t * )message,sizeof(message));
-//    	ESP_LOGI(TAG, "MensajeSINCodificar: %s",aux);
-//    	ESP_LOGI(TAG, "MensajeCodificado: %s",message);
-//
-//    	err = send(sock, message, strlen(aux)+6, 0);
-
-    	encodeMessage126((uint8_t * )aux,(uint8_t * )message,sizeof(message));
-    	ESP_LOGI(TAG, "MensajeSINCodificar: %s",aux);
-    	ESP_LOGI(TAG, "MensajeCodificado: %s",message);
-
-    	err = send(sock, message, strlen(aux)+8, 0);
-
-    	if (err < 0) {
-			ESP_LOGE(TAG, "Error occured during sending: errno %d", errno);
-			break;
-		}
-
-
-//        char msj[] = "Hola viejo\r\n";
-//        sprintf(payload2,"%s",msj);
-//    	char msj[100];
-//    	sprintf(payload2,"i,%d,%s,%s,%s,%s,%s,%s,\r\n",counter,temp_string_dht22,temp_string_aht10,temp_string_bmp280,rh_string_dht22,rh_string_aht10,pressure_string_bmp280);
-//        err = send(sock, payload2, strlen(payload2), 0);
-
-//		if (err < 0) {
-//			ESP_LOGE(TAG, "Error occured during sending: errno %d", errno);
-//			break;
-//		}
-		counter = counter + 1;
-        vTaskDelay(TIME_TRANSMISSION*1000 / portTICK_PERIOD_MS);
-    }
-//    vTaskDelete(NULL);
 }

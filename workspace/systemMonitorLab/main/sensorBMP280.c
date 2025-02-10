@@ -1,7 +1,7 @@
 #include "sensorBMP280.h"
 
 
-char payload2[300];
+//char payload2[300];
 /* I2C example
 
    This example code is in the Public Domain (or CC0 licensed, at your option.)

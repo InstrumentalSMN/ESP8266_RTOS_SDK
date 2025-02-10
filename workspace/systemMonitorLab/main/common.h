@@ -18,10 +18,11 @@
 #define I2C_EXAMPLE_MASTER_TX_BUF_DISABLE   0                /*!< I2C master do not need buffer */
 #define I2C_EXAMPLE_MASTER_RX_BUF_DISABLE   0                /*!< I2C master do not need buffer */
 #define SAMPLE_RATE_SENSORS  				10				/*In Seconds*/
-#define TIME_TRANSMISSION	  				1		/*In Seconds*/
+#define TRANSMISSION_INTERVAL  				10				/*In Seconds*/
+#define NUMERO_DE_NODO						0
 /*==================[external data declaration]==============================*/
 extern char *TAG;
-extern char payload2[300];
+extern char payload[300];
 extern char payloadWebSocket[1000];
 extern esp_err_t i2c_example_master_init();
 extern SemaphoreHandle_t i2c_mutex;
