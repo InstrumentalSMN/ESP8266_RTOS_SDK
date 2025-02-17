@@ -72,51 +72,84 @@ char pressure_string_bmp280[10];
 
 
 
-esp_err_t  get_calib_param(i2c_port_t i2c_num,bmp280_calib_param_t *calib_param)
+esp_err_t get_calib_param(i2c_port_t i2c_num, bmp280_calib_param_t *calib_param)
 {
+    int ret;
+    uint8_t sensor_data[BMP280_CALIB_DATA_SIZE] = { 0 };
 
-  	int ret;
-	uint8_t sensor_data[BMP280_CALIB_DATA_SIZE] = { 0 };
-	memset(sensor_data, 0, BMP280_CALIB_DATA_SIZE);
-	i2c_cmd_handle_t cmd = i2c_cmd_link_create();
-	i2c_master_start(cmd);
-	i2c_master_write_byte(cmd, BMP280_I2C_ADDR_PRIM << 1 | WRITE_BIT, ACK_CHECK_EN);
-	i2c_master_write_byte(cmd, BMP280_DIG_T1_LSB_ADDR, ACK_CHECK_EN);
-	i2c_master_stop(cmd);
-	ret = i2c_master_cmd_begin(i2c_num, cmd, 1000 / portTICK_RATE_MS);
-	i2c_cmd_link_delete(cmd);
+    // Se inicializa el buffer en cero para evitar datos residuales.
+    memset(sensor_data, 0, BMP280_CALIB_DATA_SIZE);
 
-	if (ret != ESP_OK) {
-		return ret;
-	}
+    // Se crea un comando de enlace para la comunicación I2C.
+    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
 
-	/*El sensor BMP280 me envia 6 bytes, 3 de presion y 3 de temp*/
-	cmd = i2c_cmd_link_create();
-	i2c_master_start(cmd);
-	i2c_master_write_byte(cmd, BMP280_I2C_ADDR_PRIM << 1 | READ_BIT, ACK_CHECK_EN);
-	i2c_master_read(cmd, sensor_data, BMP280_CALIB_DATA_SIZE, LAST_NACK_VAL);
-	i2c_master_stop(cmd);
-	ret = i2c_master_cmd_begin(i2c_num, cmd, 1000 / portTICK_RATE_MS);
-	i2c_cmd_link_delete(cmd);
+    // Se inicia la comunicación I2C.
+    i2c_master_start(cmd);
 
-	if (ret != ESP_OK) {
-			return ret;
-	}
-	calib_param->dig_t1 = (uint16_t) (((uint16_t) sensor_data[BMP280_DIG_T1_MSB_POS] << 8) | ((uint16_t) sensor_data[BMP280_DIG_T1_LSB_POS]));
-	calib_param->dig_t2 = (int16_t) (((int16_t) sensor_data[BMP280_DIG_T2_MSB_POS] << 8) | ((int16_t) sensor_data[BMP280_DIG_T2_LSB_POS]));
-	calib_param->dig_t3 = (int16_t) (((int16_t) sensor_data[BMP280_DIG_T3_MSB_POS] << 8) | ((int16_t) sensor_data[BMP280_DIG_T3_LSB_POS]));
-	calib_param->dig_p1 = (uint16_t) (((uint16_t) sensor_data[BMP280_DIG_P1_MSB_POS] << 8) | ((uint16_t) sensor_data[BMP280_DIG_P1_LSB_POS]));
-	calib_param->dig_p2 = (int16_t) (((int16_t) sensor_data[BMP280_DIG_P2_MSB_POS] << 8) | ((int16_t) sensor_data[BMP280_DIG_P2_LSB_POS]));
-	calib_param->dig_p3 = (int16_t) (((int16_t) sensor_data[BMP280_DIG_P3_MSB_POS] << 8) | ((int16_t) sensor_data[BMP280_DIG_P3_LSB_POS]));
-	calib_param->dig_p4 = (int16_t) (((int16_t) sensor_data[BMP280_DIG_P4_MSB_POS] << 8) | ((int16_t) sensor_data[BMP280_DIG_P4_LSB_POS]));
-	calib_param->dig_p5 = (int16_t) (((int16_t) sensor_data[BMP280_DIG_P5_MSB_POS] << 8) | ((int16_t) sensor_data[BMP280_DIG_P5_LSB_POS]));
-	calib_param->dig_p6 = (int16_t) (((int16_t) sensor_data[BMP280_DIG_P6_MSB_POS] << 8) | ((int16_t) sensor_data[BMP280_DIG_P6_LSB_POS]));
-	calib_param->dig_p7 = (int16_t) (((int16_t) sensor_data[BMP280_DIG_P7_MSB_POS] << 8) | ((int16_t) sensor_data[BMP280_DIG_P7_LSB_POS]));
-	calib_param->dig_p8 = (int16_t) (((int16_t) sensor_data[BMP280_DIG_P8_MSB_POS] << 8) | ((int16_t) sensor_data[BMP280_DIG_P8_LSB_POS]));
-	calib_param->dig_p9 = (int16_t) (((int16_t) sensor_data[BMP280_DIG_P9_MSB_POS] << 8) | ((int16_t) sensor_data[BMP280_DIG_P9_LSB_POS]));
+    // Se envía la dirección del sensor BMP280 con el bit de escritura.
+    i2c_master_write_byte(cmd, BMP280_I2C_ADDR_PRIM << 1 | WRITE_BIT, ACK_CHECK_EN);
 
-	return ret;
+    // Se envía la dirección de inicio de los datos de calibración.
+    i2c_master_write_byte(cmd, BMP280_DIG_T1_LSB_ADDR, ACK_CHECK_EN);
+
+    // Se detiene la comunicación I2C.
+    i2c_master_stop(cmd);
+
+    // Se envía el comando al bus I2C y se espera la respuesta.
+    ret = i2c_master_cmd_begin(i2c_num, cmd, 1000 / portTICK_RATE_MS);
+
+    // Se elimina el comando I2C ya que ya no es necesario.
+    i2c_cmd_link_delete(cmd);
+
+    // Se verifica si la comunicación fue exitosa.
+    if (ret != ESP_OK) {
+        return ret;  // Retorna el código de error si falla la comunicación.
+    }
+
+    // Se crea un nuevo comando de enlace para leer los datos.
+    cmd = i2c_cmd_link_create();
+
+    // Se inicia la comunicación I2C.
+    i2c_master_start(cmd);
+
+    // Se envía la dirección del sensor BMP280 con el bit de lectura.
+    i2c_master_write_byte(cmd, BMP280_I2C_ADDR_PRIM << 1 | READ_BIT, ACK_CHECK_EN);
+
+    // Se leen BMP280_CALIB_DATA_SIZE bytes desde el sensor BMP280.
+    i2c_master_read(cmd, sensor_data, BMP280_CALIB_DATA_SIZE, LAST_NACK_VAL);
+
+    // Se detiene la comunicación I2C.
+    i2c_master_stop(cmd);
+
+    // Se envía el comando al bus I2C y se espera la respuesta.
+    ret = i2c_master_cmd_begin(i2c_num, cmd, 1000 / portTICK_RATE_MS);
+
+    // Se elimina el comando I2C ya que ya no es necesario.
+    i2c_cmd_link_delete(cmd);
+
+    // Se verifica si la lectura fue exitosa.
+    if (ret != ESP_OK) {
+        return ret;  // Retorna el código de error si falla la comunicación.
+    }
+
+    // Se procesan los datos recibidos y se almacenan en la estructura de calibración.
+    calib_param->dig_t1 = (uint16_t) (((uint16_t) sensor_data[BMP280_DIG_T1_MSB_POS] << 8) | ((uint16_t) sensor_data[BMP280_DIG_T1_LSB_POS]));
+    calib_param->dig_t2 = (int16_t) (((int16_t) sensor_data[BMP280_DIG_T2_MSB_POS] << 8) | ((int16_t) sensor_data[BMP280_DIG_T2_LSB_POS]));
+    calib_param->dig_t3 = (int16_t) (((int16_t) sensor_data[BMP280_DIG_T3_MSB_POS] << 8) | ((int16_t) sensor_data[BMP280_DIG_T3_LSB_POS]));
+
+    calib_param->dig_p1 = (uint16_t) (((uint16_t) sensor_data[BMP280_DIG_P1_MSB_POS] << 8) | ((uint16_t) sensor_data[BMP280_DIG_P1_LSB_POS]));
+    calib_param->dig_p2 = (int16_t) (((int16_t) sensor_data[BMP280_DIG_P2_MSB_POS] << 8) | ((int16_t) sensor_data[BMP280_DIG_P2_LSB_POS]));
+    calib_param->dig_p3 = (int16_t) (((int16_t) sensor_data[BMP280_DIG_P3_MSB_POS] << 8) | ((int16_t) sensor_data[BMP280_DIG_P3_LSB_POS]));
+    calib_param->dig_p4 = (int16_t) (((int16_t) sensor_data[BMP280_DIG_P4_MSB_POS] << 8) | ((int16_t) sensor_data[BMP280_DIG_P4_LSB_POS]));
+    calib_param->dig_p5 = (int16_t) (((int16_t) sensor_data[BMP280_DIG_P5_MSB_POS] << 8) | ((int16_t) sensor_data[BMP280_DIG_P5_LSB_POS]));
+    calib_param->dig_p6 = (int16_t) (((int16_t) sensor_data[BMP280_DIG_P6_MSB_POS] << 8) | ((int16_t) sensor_data[BMP280_DIG_P6_LSB_POS]));
+    calib_param->dig_p7 = (int16_t) (((int16_t) sensor_data[BMP280_DIG_P7_MSB_POS] << 8) | ((int16_t) sensor_data[BMP280_DIG_P7_LSB_POS]));
+    calib_param->dig_p8 = (int16_t) (((int16_t) sensor_data[BMP280_DIG_P8_MSB_POS] << 8) | ((int16_t) sensor_data[BMP280_DIG_P8_LSB_POS]));
+    calib_param->dig_p9 = (int16_t) (((int16_t) sensor_data[BMP280_DIG_P9_MSB_POS] << 8) | ((int16_t) sensor_data[BMP280_DIG_P9_LSB_POS]));
+
+    return ret;  // Retorna ESP_OK si todo fue exitoso.
 }
+
 
 
 
@@ -270,22 +303,38 @@ static esp_err_t writeCommandToBmp280(i2c_port_t i2c_num, uint8_t reg_address, u
 
 static esp_err_t i2c_example_master_bmp280_init(i2c_port_t i2c_num)
 {
-	uint8_t cmd_data;
-//	vTaskDelay(100 / portTICK_RATE_MS);
-//    i2c_example_master_init();
-    cmd_data = BMP280_SOFT_RESET_CMD;    // reset bmp280
-	ESP_ERROR_CHECK(writeCommandToBmp280(i2c_num, BMP280_SOFT_RESET_ADDR, &cmd_data, 1));
+    uint8_t cmd_data;
 
-	cmd_data = BMP280_NORMAL_MODE | (BMP280_OS_16X << 2) | (BMP280_OS_2X <<5);
-//	BMP280_OS_2X(para temp) , BMP280_OS_16X(para presion), BMP280_NORMAL_MODE (Normal mode)
-	printf("dato %d",cmd_data);
-	ESP_ERROR_CHECK(writeCommandToBmp280(i2c_num, BMP280_CTRL_MEAS_ADDR, &cmd_data, 1));
+    // Se define el comando de reinicio para el sensor BMP280.
+    cmd_data = BMP280_SOFT_RESET_CMD;
 
-	cmd_data = BMP280_SPI3_WIRE_DISABLE | (BMP280_FILTER_COEFF_2 <<2) |  (BMP280_ODR_125_MS <<5);
-	ESP_ERROR_CHECK(writeCommandToBmp280(i2c_num, BMP280_CONFIG_ADDR, &cmd_data, 1));
-	return ESP_OK;
+    // Se envía el comando de reinicio al sensor en la dirección correspondiente.
+    ESP_ERROR_CHECK(writeCommandToBmp280(i2c_num, BMP280_SOFT_RESET_ADDR, &cmd_data, 1));
 
+    // Configuración del registro de control de medición:
+    // - BMP280_OS_2X para temperatura (2x oversampling)
+    // - BMP280_OS_16X para presión (16x oversampling)
+    // - BMP280_NORMAL_MODE para operar en modo normal
+    cmd_data = BMP280_NORMAL_MODE | (BMP280_OS_16X << 2) | (BMP280_OS_2X << 5);
+
+    // Se imprime el valor del comando de configuración (para depuración).
+    printf("dato %d", cmd_data);
+
+    // Se escribe la configuración en el registro de control de medición.
+    ESP_ERROR_CHECK(writeCommandToBmp280(i2c_num, BMP280_CTRL_MEAS_ADDR, &cmd_data, 1));
+
+    // Configuración del registro de configuración:
+    // - BMP280_SPI3_WIRE_DISABLE para deshabilitar SPI de 3 hilos
+    // - BMP280_FILTER_COEFF_2 para aplicar un coeficiente de filtrado de 2
+    // - BMP280_ODR_125_MS para establecer una tasa de actualización de 125 ms
+    cmd_data = BMP280_SPI3_WIRE_DISABLE | (BMP280_FILTER_COEFF_2 << 2) | (BMP280_ODR_125_MS << 5);
+
+    // Se escribe la configuración en el registro de configuración del sensor.
+    ESP_ERROR_CHECK(writeCommandToBmp280(i2c_num, BMP280_CONFIG_ADDR, &cmd_data, 1));
+
+    return ESP_OK; // Se retorna ESP_OK si la inicialización fue exitosa.
 }
+
 
 
 

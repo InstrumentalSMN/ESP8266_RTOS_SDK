@@ -1,0 +1,170 @@
+(kicad_sch (version 20211123) (generator eeschema)
+
+  (uuid 31567b71-44a6-4f20-978f-6760a129c7a5)
+
+  (paper "A4")
+
+  (title_block
+    (title "Nodo de temperatura, humedad y presión")
+    (date "2025-02-14")
+    (rev "v2.0")
+    (company "Servicio Meteorológico Nacional (SMN)")
+  )
+
+  (lib_symbols
+  )
+
+
+  (sheet (at 53.975 48.26) (size 54.483 46.736) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid) (color 0 0 0 0))
+    (fill (color 0 0 0 0.0000))
+    (uuid 38d5e957-879e-408c-8450-ff788dcea95c)
+    (property "Sheet name" "shield_base" (id 0) (at 53.975 47.5484 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheet file" "shield_base.kicad_sch" (id 1) (at 53.975 95.5806 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+  )
+
+  (sheet (at 156.21 50.927) (size 65.659 42.672) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid) (color 0 0 0 0))
+    (fill (color 0 0 0 0.0000))
+    (uuid a5c8404b-c871-4957-8f0c-905335996a80)
+    (property "Sheet name" "shield_sensor" (id 0) (at 156.21 50.2154 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheet file" "shield_sensor.kicad_sch" (id 1) (at 156.21 94.1836 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+    (path "/38d5e957-879e-408c-8450-ff788dcea95c" (page "2"))
+    (path "/a5c8404b-c871-4957-8f0c-905335996a80" (page "3"))
+  )
+
+  (symbol_instances
+    (path "/38d5e957-879e-408c-8450-ff788dcea95c/adf08207-7b53-4fe7-a77a-ac881b92f893"
+      (reference "#FLG0101") (unit 1) (value "PWR_FLAG") (footprint "")
+    )
+    (path "/38d5e957-879e-408c-8450-ff788dcea95c/27493f9a-2670-4692-b19b-b494cd56d14f"
+      (reference "#FLG0102") (unit 1) (value "PWR_FLAG") (footprint "")
+    )
+    (path "/38d5e957-879e-408c-8450-ff788dcea95c/b3bfa3d1-91e5-46e4-9105-c0cff2d08016"
+      (reference "#FLG0103") (unit 1) (value "PWR_FLAG") (footprint "")
+    )
+    (path "/a5c8404b-c871-4957-8f0c-905335996a80/efe2f787-7d9e-4076-8658-c48147183c97"
+      (reference "#FLG0104") (unit 1) (value "PWR_FLAG") (footprint "")
+    )
+    (path "/a5c8404b-c871-4957-8f0c-905335996a80/dec1d39a-a35c-446b-acd4-d0652bf6264e"
+      (reference "#FLG0105") (unit 1) (value "PWR_FLAG") (footprint "")
+    )
+    (path "/a5c8404b-c871-4957-8f0c-905335996a80/c8700972-c345-4569-9b8b-f83ad500bb30"
+      (reference "#FLG0106") (unit 1) (value "PWR_FLAG") (footprint "")
+    )
+    (path "/38d5e957-879e-408c-8450-ff788dcea95c/2c6fefe1-d0c6-412d-9ff2-ed37b60dcd2b"
+      (reference "#PWR01") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/38d5e957-879e-408c-8450-ff788dcea95c/a22f6159-4e55-48de-a505-baa4c90590bd"
+      (reference "#PWR02") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/38d5e957-879e-408c-8450-ff788dcea95c/b8065708-83d8-4d7d-b8a1-ee9d5c26f200"
+      (reference "#PWR0101") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/38d5e957-879e-408c-8450-ff788dcea95c/6021a359-35e2-4457-bc87-aa0282066c71"
+      (reference "#PWR0102") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/38d5e957-879e-408c-8450-ff788dcea95c/7821e3ee-3b4c-442e-9d59-fa86da328891"
+      (reference "#PWR0103") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/38d5e957-879e-408c-8450-ff788dcea95c/20361811-a773-4fcb-b4a2-7d422af523b6"
+      (reference "#PWR0104") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/38d5e957-879e-408c-8450-ff788dcea95c/262b88b3-4241-42ec-90c5-750d9527f36d"
+      (reference "#PWR0105") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/38d5e957-879e-408c-8450-ff788dcea95c/55b8d107-2c38-44fe-a21f-6b1286eb8762"
+      (reference "#PWR0108") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/38d5e957-879e-408c-8450-ff788dcea95c/e9efa557-597f-411f-a77f-d45aee4f2234"
+      (reference "#PWR0109") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/38d5e957-879e-408c-8450-ff788dcea95c/116328cb-c2a3-4685-a1c6-2a065c4ea792"
+      (reference "#PWR0111") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/a5c8404b-c871-4957-8f0c-905335996a80/bfd1f594-6203-49f9-b9a3-00017a6e32ef"
+      (reference "#PWR0112") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/a5c8404b-c871-4957-8f0c-905335996a80/02cdf7d1-ec58-4f27-b852-6c61e1383a51"
+      (reference "#PWR0113") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/a5c8404b-c871-4957-8f0c-905335996a80/da644d48-d658-4930-ad55-c560ad659e09"
+      (reference "#PWR0114") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/a5c8404b-c871-4957-8f0c-905335996a80/d2387bc4-d861-4e99-8b22-3ebe146d5792"
+      (reference "#PWR0115") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/a5c8404b-c871-4957-8f0c-905335996a80/37b19c50-e747-4abd-b3e9-a48fcafe7817"
+      (reference "#PWR0116") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/a5c8404b-c871-4957-8f0c-905335996a80/d0eb270d-6e81-4263-8467-0800c99ba716"
+      (reference "#PWR0117") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/a5c8404b-c871-4957-8f0c-905335996a80/ff946faf-cbcd-4589-9de4-2da354a4eaa0"
+      (reference "#PWR0118") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/a5c8404b-c871-4957-8f0c-905335996a80/3cec3b06-1e96-49d5-bcdb-3c7de4c2bc71"
+      (reference "#PWR0119") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/a5c8404b-c871-4957-8f0c-905335996a80/375febcc-6e35-40bf-9474-e73cb9b503b3"
+      (reference "#PWR0120") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/a5c8404b-c871-4957-8f0c-905335996a80/8a965117-2f44-43ac-85aa-5e8408fd6e89"
+      (reference "#PWR0121") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/a5c8404b-c871-4957-8f0c-905335996a80/29c8767e-0741-4b5e-858a-3d192450ef88"
+      (reference "#PWR0122") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/a5c8404b-c871-4957-8f0c-905335996a80/2622da5c-ee16-4c5c-85ab-5966f20edca4"
+      (reference "#PWR0123") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/38d5e957-879e-408c-8450-ff788dcea95c/2cafdb2a-6c0b-4679-aa8a-7cf484ebfb9c"
+      (reference "J1") (unit 1) (value "DHT22") (footprint "")
+    )
+    (path "/38d5e957-879e-408c-8450-ff788dcea95c/4fad404b-ca8d-44c8-800a-e54710f95b38"
+      (reference "J2") (unit 1) (value "BMP280") (footprint "")
+    )
+    (path "/38d5e957-879e-408c-8450-ff788dcea95c/e0c1a213-3498-48c7-bf04-f6b903416d58"
+      (reference "J3") (unit 1) (value "Jack-DC") (footprint "")
+    )
+    (path "/a5c8404b-c871-4957-8f0c-905335996a80/8c2ea950-1f47-4538-a376-d9ea0703fc39"
+      (reference "J4") (unit 1) (value "Conn_01x01_Male") (footprint "Connector_Pin:Pin_D1.0mm_L10.0mm")
+    )
+    (path "/a5c8404b-c871-4957-8f0c-905335996a80/42adcf68-97cf-463e-8318-f7d2a51b650a"
+      (reference "J5") (unit 1) (value "Conn_01x01_Male") (footprint "Connector_Pin:Pin_D1.0mm_L10.0mm")
+    )
+    (path "/38d5e957-879e-408c-8450-ff788dcea95c/9221c151-5812-47d8-9909-ce9ed25f4510"
+      (reference "R1") (unit 1) (value "5K6") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P15.24mm_Horizontal")
+    )
+    (path "/a5c8404b-c871-4957-8f0c-905335996a80/a6828dbb-b99e-4b2c-91ba-11cb452f3700"
+      (reference "R2") (unit 1) (value "5K6") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P15.24mm_Horizontal")
+    )
+    (path "/38d5e957-879e-408c-8450-ff788dcea95c/789ad8da-c9b3-4ba2-816e-d8b3c8c7edd8"
+      (reference "U1") (unit 1) (value "NodeMcuEsp8266") (footprint "NodeMCU_Module:ESP8266")
+    )
+    (path "/a5c8404b-c871-4957-8f0c-905335996a80/39fe3792-406c-4e15-a171-a2ffc91286ff"
+      (reference "U2") (unit 1) (value "AHT10") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
+    )
+    (path "/a5c8404b-c871-4957-8f0c-905335996a80/7d49de33-6bed-4608-bb4c-3590a7f5e5f9"
+      (reference "U3") (unit 1) (value "DHT22") (footprint "Sensor:Aosong_DHT11_5.5x12.0_P2.54mm")
+    )
+    (path "/a5c8404b-c871-4957-8f0c-905335996a80/d8e3862f-542c-4d17-b454-1151ca012ce8"
+      (reference "U4") (unit 1) (value "Bmp280Module") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical")
+    )
+    (path "/a5c8404b-c871-4957-8f0c-905335996a80/bdf9c299-e16a-4956-9c7e-b4b80371c7f6"
+      (reference "U5") (unit 1) (value "NodeMcuEsp8266") (footprint "NodeMCU_Module:ESP8266")
+    )
+  )
+)
