@@ -1,6 +1,13 @@
 #include "transmission.h"
 #include "lwip/apps/sntp.h"
+#include "driver/gpio.h"
 #include "configRTC.h"
+
+#define GPIO_OUTPUT_LED_1    5
+#define GPIO_OUTPUT_LED_2    12
+#define GPIO_OUTPUT_LED_3    13
+#define GPIO_OUTPUT_LED_4    15
+#define GPIO_OUTPUT_PIN_MASK_TO_SET  ((1ULL<<GPIO_OUTPUT_LED_1) | (1ULL<<GPIO_OUTPUT_LED_2) | (1ULL<<GPIO_OUTPUT_LED_3) | (1ULL<<GPIO_OUTPUT_LED_4) )
 // Definición de la cola (¡NO inicializar aquí!)
 QueueHandle_t connectionInfoQueue;
 char payload[300];
@@ -20,6 +27,7 @@ void tcp_client_task(void *pvParameters)
     struct tm timeinfo;
    	char fecha[] = "15-01-2025";
 	char hora[] = "10:10:00";
+	int cnt = 0;
 
     #ifdef CONFIG_EXAMPLE_IPV4
             struct sockaddr_in destAddr;
@@ -39,6 +47,20 @@ void tcp_client_task(void *pvParameters)
             ip_protocol = IPPROTO_IPV6;
             inet6_ntoa_r(destAddr.sin6_addr, addr_str, sizeof(addr_str) - 1);
     #endif
+// Configurar los Leds de estado
+	gpio_config_t io_conf;
+	//disable interrupt
+	io_conf.intr_type = GPIO_INTR_DISABLE;
+	//set as output mode
+	io_conf.mode = GPIO_MODE_OUTPUT;
+	//bit mask of the pins that you want to set,e.g.GPIO15/16
+	io_conf.pin_bit_mask = GPIO_OUTPUT_PIN_MASK_TO_SET;
+	//disable pull-down mode
+	io_conf.pull_down_en = 0;
+	//disable pull-up mode
+	io_conf.pull_up_en = 0;
+	//configure GPIO with the given settings
+	gpio_config(&io_conf);
 
 // Obtener el tiempo actual
    time(&now);
@@ -56,6 +78,8 @@ void tcp_client_task(void *pvParameters)
 //    		connectionData.ackConnect = 0; // Si no hay mensaje en la cola, asume desconectado
 //        }
     	if(connectionData.ackConnect != 1){
+
+//    		CAMBIAR DE COLOR LED DUAL EN FUNCION DEL ESTADO DE CONECTIVIDAD CON EL SERVIDOR WEB SOCKET
 			while(1){
 				connectionData.socketNumber =  socket(addr_family, SOCK_STREAM, ip_protocol);
 				if (connectionData.socketNumber < 0) {
@@ -131,7 +155,11 @@ void tcp_client_task(void *pvParameters)
 		localtime_r(&now, &timeinfo);
 		seconds_until_next_interval = TRANSMISSION_INTERVAL - (timeinfo.tm_sec % TRANSMISSION_INTERVAL);
 
-
+		ESP_LOGI(TAG, "cnt: %d\n", cnt++);
+		gpio_set_level(GPIO_OUTPUT_LED_1, cnt % 2);
+		gpio_set_level(GPIO_OUTPUT_LED_2, cnt % 2);
+		gpio_set_level(GPIO_OUTPUT_LED_3, cnt % 2);
+		gpio_set_level(GPIO_OUTPUT_LED_4, cnt % 2);
         vTaskDelay(seconds_until_next_interval*1000 / portTICK_PERIOD_MS);
     }
 //    vTaskDelete(NULL);

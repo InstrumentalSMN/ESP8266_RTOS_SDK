@@ -11,6 +11,9 @@
 #include "esp_err.h"
 #include "driver/i2c.h"
 #include "semphr.h"
+#include "driver/gpio.h"
+
+
 #define MAX_PRECISION   (10)
 #define I2C_EXAMPLE_MASTER_SCL_IO           2                /*!< gpio number for I2C master clock */
 #define I2C_EXAMPLE_MASTER_SDA_IO           14               /*!< gpio number for I2C master data  */
@@ -20,6 +23,9 @@
 #define SAMPLE_RATE_SENSORS  				10				/*In Seconds*/
 #define TRANSMISSION_INTERVAL  				10				/*In Seconds*/
 #define NUMERO_DE_NODO						0
+#define LOW_LEVEL							0
+#define HIGH_LEVEL							1
+
 /*==================[external data declaration]==============================*/
 extern char *TAG;
 extern char payload[300];

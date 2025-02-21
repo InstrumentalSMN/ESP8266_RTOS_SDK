@@ -366,7 +366,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "PcbSistemaAmbienteLabparte1.net",
-      "specctra_dsn": "",
+      "specctra_dsn": "PcbSistemaAmbienteLab.dsn",
       "step": "",
       "vrml": ""
     },
@@ -416,12 +416,16 @@
       ""
     ],
     [
-      "a9e287c1-ba2e-4aa8-9d37-21e2a99401cb",
-      "gdfgdfgdf"
+      "38d5e957-879e-408c-8450-ff788dcea95c",
+      "shield_base"
     ],
     [
-      "c0617fbc-ed9c-407a-86ce-77e944f7bbe4",
-      "fdgdfgfd"
+      "a5c8404b-c871-4957-8f0c-905335996a80",
+      "shield_sensor"
+    ],
+    [
+      "ffb5ec71-6abc-4f99-a135-428820e16084",
+      "shield_leds_status"
     ]
   ],
   "text_variables": {}
